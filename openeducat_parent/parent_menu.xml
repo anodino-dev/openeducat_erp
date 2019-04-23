@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <menuitem id="menu_op_parent_root" name="Parents"
+        <menuitem id="menu_op_parent_root" parent="openeducat_core.menu_op_school_root" name="Parents"
             sequence="110" web_icon="openeducat_parent,static/description/icon.png"/>
 
         <menuitem id="menu_op_parent_sub_parent" name="Parents"
