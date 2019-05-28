@@ -45,8 +45,8 @@ class OpAdmission(models.Model):
     title = fields.Many2one(
         'res.partner.title', 'Title', states={'done': [('readonly', True)]})
     application_number = fields.Char(
-        'Application Number', size=16, required=True, copy=False,
-        states={'done': [('readonly', True)]},
+        'Application Number', size=16, copy=False,
+        required=True, readonly=True, store=True,
         default=lambda self:
         self.env['ir.sequence'].next_by_code('op.admission'))
     admission_date = fields.Date(
@@ -119,6 +119,15 @@ class OpAdmission(models.Model):
     partner_id = fields.Many2one('res.partner', 'Partner')
     is_student = fields.Boolean('Is Already Student')
     fees_term_id = fields.Many2one('op.fees.terms', 'Fees Term')
+
+    _sql_constraints = [
+        ('unique_application_number',
+         'unique(application_number)',
+         'Application Number must be unique per Application!'),
+        ('unique_application_email',
+         'unique(email)',
+         'Email must be unique per Application!')
+    ]
 
     @api.onchange('student_id', 'is_student')
     def onchange_student(self):
@@ -257,10 +266,10 @@ class OpAdmission(models.Model):
     @api.multi
     def enroll_student(self):
         for record in self:
-            total_admission = self.env['op.admission'].search_count(
-                [('register_id', '=', record.register_id.id),
-                 ('state', '=', 'done')])
             if record.register_id.max_count:
+                total_admission = self.env['op.admission'].search_count(
+                    [('register_id', '=', record.register_id.id),
+                     ('state', '=', 'done')])
                 if not total_admission < record.register_id.max_count:
                     msg = 'Max Admission In Admission Register :- (%s)' % (
                         record.register_id.max_count)
