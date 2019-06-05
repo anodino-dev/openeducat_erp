@@ -99,3 +99,13 @@ class OpSubjectRegistration(models.Model):
                     if subject.subject_type == 'compulsory':
                         subject_ids.append(subject.id)
             record.compulsory_subject_ids = [(6, 0, subject_ids)]
+
+
+    @api.onchange('course_id')
+    def onchange_course(self):
+        self.batch_id = False
+
+    @api.onchange('batch_id')
+    def onchange_batch(self):
+        if self.batch_id and not self.course_id:
+            self.course_id  = self.batch_id.course_id

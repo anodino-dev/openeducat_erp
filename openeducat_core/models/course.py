@@ -34,9 +34,13 @@ class OpCourse(models.Model):
         'Evaluation Type', default="normal", required=True)
     subject_ids = fields.One2many(
         'op.subject', 'course_id', string='Subject(s)')
+    batch_ids = fields.One2many(
+        'op.batch', 'course_id', string='Batch(es)')
     max_unit_load = fields.Float("Maximum Unit Load")
     min_unit_load = fields.Float("Minimum Unit Load")
 
     _sql_constraints = [
         ('unique_course_code',
          'unique(code)', 'Code should be unique per course!')]
+
+    

@@ -33,7 +33,10 @@
                             <field name="max_unit_load"/>
                         </group>
                         <group string="Subjects" name="subject">
-                            <field name="subject_ids" nolabel="1"/>
+                            <field name="subject_ids" nolabel="1"  context="{'default_course_id': context.get('id', active_id)}"/>
+                        </group>
+                        <group string="Batches" name="batch">
+                            <field name="batch_ids" nolabel="1"  context="{'default_course_id': context.get('id', active_id)}"/>
                         </group>
                     </sheet>
                 </form>

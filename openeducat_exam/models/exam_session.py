@@ -66,3 +66,8 @@ class OpExamSession(models.Model):
     @api.onchange('course_id')
     def onchange_course(self):
         self.batch_id = False
+
+    @api.onchange('batch_id')
+    def onchange_batch(self):
+        if self.batch_id:
+            self.course_id  = self.batch_id.course_id

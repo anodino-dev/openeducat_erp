@@ -116,3 +116,5 @@ class OpStudent(models.Model):
 
     fees_detail_ids = fields.One2many('op.student.fees.details', 'student_id',
                                       'Fees Collection Details')
+    admision_ids = fields.One2many('op.admission', 'student_id',
+                                      'Admissions')
