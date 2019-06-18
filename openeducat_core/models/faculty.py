@@ -29,20 +29,21 @@ class OpFaculty(models.Model):
 
     partner_id = fields.Many2one(
         'res.partner', 'Partner', required=True, ondelete="cascade")
-    middle_name = fields.Char('Middle Name', size=128)
+    first_name = fields.Char('First Name', size=128, required=True)
+#     middle_name = fields.Char('Middle Name', size=128)
     last_name = fields.Char('Last Name', size=128, required=True)
     birth_date = fields.Date('Birth Date', required=True)
-    blood_group = fields.Selection(
-        [('A+', 'A+ve'), ('B+', 'B+ve'), ('O+', 'O+ve'), ('AB+', 'AB+ve'),
-         ('A-', 'A-ve'), ('B-', 'B-ve'), ('O-', 'O-ve'), ('AB-', 'AB-ve')],
-        'Blood Group')
+#     blood_group = fields.Selection(
+#         [('A+', 'A+ve'), ('B+', 'B+ve'), ('O+', 'O+ve'), ('AB+', 'AB+ve'),
+#          ('A-', 'A-ve'), ('B-', 'B-ve'), ('O-', 'O-ve'), ('AB-', 'AB-ve')],
+#         'Blood Group')
     gender = fields.Selection(
         [('male', 'Male'), ('female', 'Female')], 'Gender', required=True)
     nationality = fields.Many2one('res.country', 'Nationality')
-    emergency_contact = fields.Many2one(
-        'res.partner', 'Emergency Contact')
-    visa_info = fields.Char('Visa Info', size=64)
-    id_number = fields.Char('ID Card Number', size=64)
+#     emergency_contact = fields.Many2one(
+#         'res.partner', 'Emergency Contact')
+#     visa_info = fields.Char('Visa Info', size=64)
+#     id_number = fields.Char('ID Card Number', size=64)
     login = fields.Char(
         'Login', related='partner_id.user_id.login', readonly=1)
     last_login = fields.Datetime(
@@ -50,6 +51,8 @@ class OpFaculty(models.Model):
         readonly=1)
     faculty_subject_ids = fields.Many2many('op.subject', string='Subject(s)')
     emp_id = fields.Many2one('hr.employee', 'Employee')
+    
+
 
     @api.multi
     @api.constrains('birth_date')
@@ -59,16 +62,20 @@ class OpFaculty(models.Model):
                 raise ValidationError(_(
                     "Birth Date can't be greater than current date!"))
 
-    @api.multi
-    def create_employee(self):
-        for record in self:
-            vals = {
-                'name': record.name + ' ' + (record.middle_name or '') +
-                ' ' + record.last_name,
-                'country_id': record.nationality.id,
-                'gender': record.gender,
-                'address_home_id': record.partner_id.id
-            }
-            emp_id = self.env['hr.employee'].create(vals)
-            record.write({'emp_id': emp_id.id})
-            record.partner_id.write({'supplier': True, 'employee': True})
+    @api.onchange('first_name','last_name')
+    def _onchange_name(self):
+        self.name = u'{} {}'.format(self.first_name,self.last_name)
+
+    @api.model
+    def create(self,data):
+        record=super(OpFaculty, self).create(data)
+        vals = {
+            'name': record.name,
+            'country_id': record.nationality.id,
+            'gender': record.gender,
+            'address_home_id': record.partner_id.id
+        }
+        emp_id = self.env['hr.employee'].create(vals)
+        record.write({'emp_id': emp_id.id})
+        record.write({'supplier': True, 'employee': True, 'customer' : False})
+        return record

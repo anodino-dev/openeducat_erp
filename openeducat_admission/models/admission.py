@@ -205,7 +205,7 @@ class OpAdmission(models.Model):
                 raise ValidationError(_('Please assign batch.'))
             if not record.partner_id:
                 partner_id = self.env['res.partner'].create({
-                    'name': record.name
+                    'name': '{} {}'.format(record.name,record.last_name)
                 })
                 record.partner_id = partner_id.id
             record.state = 'confirm'
