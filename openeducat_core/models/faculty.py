@@ -54,7 +54,9 @@ class OpFaculty(models.Model):
 #         'Latest Connection', related='emp_id.user_id.login_date',
 #         readonly=1)
     faculty_subject_ids = fields.Many2many('op.subject', string='Subject(s)')
+    course_ids =  fields.Many2many('op.course', string='Course(s)')
     contact_address = fields.Char(related="address_home_id.contact_address")
+    
     @api.onchange('first_name','last_name')
     def _onchange_name(self):
         if self.first_name and self.last_name:
@@ -62,6 +64,8 @@ class OpFaculty(models.Model):
 
     @api.model
     def create(self,data):
+        if not data.get("name"):
+            data.update(name=u'{} {}'.format(self.first_name,self.last_name))
         record=super(OpFaculty, self).create(data)
         vals = {}
         vals.update(
