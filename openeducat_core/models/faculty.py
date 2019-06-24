@@ -56,6 +56,10 @@ class OpFaculty(models.Model):
     faculty_subject_ids = fields.Many2many('op.subject', string='Subject(s)')
     course_ids =  fields.Many2many('op.course', string='Course(s)')
     contact_address = fields.Char(related="address_home_id.contact_address")
+    work_function = fields.Char()
+    career = fields.Char()
+    curriculum = fields.Html()
+    
     
     @api.onchange('first_name','last_name')
     def _onchange_name(self):
