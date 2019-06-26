@@ -24,7 +24,8 @@ from odoo import models, fields
 
 class OpCourse(models.Model):
     _name = 'op.course'
-
+    _inherit = ['website.seo.metadata']
+    
     name = fields.Char('Name', required=True)
     code = fields.Char('Code', size=16, required=True)
     parent_id = fields.Many2one('op.course', 'Parent Course')
@@ -36,11 +37,27 @@ class OpCourse(models.Model):
         'op.subject', 'course_id', string='Subject(s)')
     batch_ids = fields.One2many(
         'op.batch', 'course_id', string='Batch(es)')
+    faculty_ids = fields.Many2many('op.faculty','faculty_course_rel')
+    
+    short_description = fields.Html()
+    description = fields.Html()
+    category_ids = fields.Many2many('product.category')
+       
+    topic_ids = fields.One2many('op.course.topic','course_id')
+    
     max_unit_load = fields.Float("Maximum Unit Load")
     min_unit_load = fields.Float("Minimum Unit Load")
 
     _sql_constraints = [
         ('unique_course_code',
-         'unique(code)', 'Code should be unique per course!')]
+        'unique(code)', 'Code should be unique per course!')]
 
+
+class OpCourseTopic(models.Model): 
+    _name='op.course.topic'
+    
+    name = fields.Char()
+    course_id = fields.Many2one('op.course', required=True)
+    sequence = fields.Integer()
+    
     
