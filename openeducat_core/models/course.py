@@ -39,8 +39,10 @@ class OpCourse(models.Model):
         'op.batch', 'course_id', string='Batch(es)')
     faculty_ids = fields.Many2many('op.faculty','faculty_course_rel')
     
-    short_description = fields.Html()
-    description = fields.Html()
+    fullname = fields.Char()
+    
+    summary = fields.Html()
+    
     category_ids = fields.Many2many('product.category')
        
     topic_ids = fields.One2many('op.course.topic','course_id')
