@@ -29,7 +29,7 @@ class OpCourse(models.Model):
     name = fields.Char('Name', required=True)
     code = fields.Char('Code', size=16, required=True)
     parent_id = fields.Many2one('op.course', 'Parent Course')
-    section = fields.Char('Section', size=32, required=True)
+    section = fields.Char('Section', size=32)
     evaluation_type = fields.Selection(
         [('normal', 'Normal'), ('GPA', 'GPA'), ('CWA', 'CWA'), ('CCE', 'CCE')],
         'Evaluation Type', default="normal", required=True)
@@ -39,7 +39,7 @@ class OpCourse(models.Model):
         'op.batch', 'course_id', string='Batch(es)')
     faculty_ids = fields.Many2many('op.faculty','faculty_course_rel')
     
-    fullname = fields.Char()
+    fullname = fields.Char(required=True)
     
     summary = fields.Html()
     
