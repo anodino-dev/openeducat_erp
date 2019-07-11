@@ -21,7 +21,7 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Batch">
-					<header></header>
+					<header groups="openeducat_core.group_op_back_office"></header>
 					<sheet>
 						<group>
 							<group>

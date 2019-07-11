@@ -22,7 +22,7 @@
 			<field eval="8" name="priority" />
 			<field name="arch" type="xml">
 				<form string="Course">
-					<header></header>
+					<header groups="openeducat_core.group_op_back_office"></header>
 					<sheet>
 						<group>
 							<group name="main1">
