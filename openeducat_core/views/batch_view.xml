@@ -23,12 +23,16 @@
 				<form string="Batch">
 					<header></header>
 					<sheet>
-						<group col="4" name="main">
-							<field name="name" />
-							<field name="code" />
-							<field name="start_date" />
-							<field name="end_date" />
-							<field name="course_id" />
+						<group>
+							<group>
+								<field name="name" />
+								<field name="code" />
+								<field name="course_id" />
+							</group>
+							<group>
+								<field name="start_date" />
+								<field name="end_date" />
+							</group>
 						</group>
 					</sheet>
 				</form>
