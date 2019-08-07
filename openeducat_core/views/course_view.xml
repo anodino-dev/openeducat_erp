@@ -58,6 +58,22 @@
 									<field name="website_meta_title" />
 									<field name="website_meta_keywords" />
 								</group>
+								<group>
+									<group>
+										<field name="recipients" />
+										<field name="duration" />
+										<field name="schedule" />
+                                        <field name="seats"/>
+                                        <field name="requirements"/>
+									</group>
+                                    <group>
+                                        <field name="teaching_hours" />
+                                        <field name="place" />
+                                        <field name="mode" />
+                                        <field name="type" />
+                                        
+                                    </group>
+								</group>
 							</page>
 							<page name="subjects" string="Subjects">
 								<group name="subject" string="Subjects">

@@ -19,7 +19,7 @@
 #
 ###############################################################################
 
-from odoo import models, fields
+from odoo import models, fields,_
 
 
 class OpCourse(models.Model):
@@ -49,6 +49,16 @@ class OpCourse(models.Model):
     
     max_unit_load = fields.Float("Maximum Unit Load")
     min_unit_load = fields.Float("Minimum Unit Load")
+    recipients = fields.Char()
+    duration = fields.Char()
+    schedule = fields.Text()
+    teaching_hours = fields.Char()
+    place = fields.Selection([('3','Barcelona'),('4','Girona')])
+    mode = fields.Selection([('7',_('Virtual')),('6',_('Physical'))])
+    seats = fields.Char()
+    requirements = fields.Text()
+    type= fields.Char()
+
 
     _sql_constraints = [
         ('unique_course_code',
