@@ -24,9 +24,15 @@
 				<form string="Course">
 					<header groups="openeducat_core.group_op_back_office"></header>
 					<sheet>
-						<group>
+						<div class="oe_title">
+							<label class="oe_edit_only" for="name" />
+							<h1>
+								<field name="name" placeholder="Course Name" />
+							</h1>
+						</div>
+						<group name="main">
 							<group name="main1">
-								<field name="name" />
+
 								<field name="fullname" />
 								<field name="code" />
 								<field name="category_ids" widget="many2many_tags" />
