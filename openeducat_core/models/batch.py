@@ -32,7 +32,7 @@ class OpBatch(models.Model):
         'Start Date', required=True, default=fields.Date.today())
     end_date = fields.Date('End Date')
     course_id = fields.Many2one('op.course', 'Course', required=True)
-
+    faculty_ids = fields.Many2many('op.faculty','batch_faculty_rel')
     _sql_constraints = [
         ('unique_batch_code',
          'unique(code)', 'Code should be unique per batch!')]

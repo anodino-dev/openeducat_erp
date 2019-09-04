@@ -146,11 +146,14 @@
 									<!-- <field name='emp_id' readonly="1"/> -->
 								</group>
 							</page>
-                            <page name="subjects" string="Subjects">
-                                <field name="faculty_subject_ids" colspan="4" nolabel="1" />
+<!--                             <page name="subjects" string="Subjects">
+                                <field name="faculty_subject_ids" nolabel="1" />
                             </page>
-                            <page name="courses" string="Courses">
-                                <field name="course_ids" colspan="4" nolabel="1" />
+ -->                            <page name="courses" string="Courses">
+                                <field name="course_ids" nolabel="1" />
+                            </page>
+                            <page name="batches" string="Batches">
+                                <field name="batch_ids" nolabel="1" />
                             </page>
 						</notebook>
 					</sheet>

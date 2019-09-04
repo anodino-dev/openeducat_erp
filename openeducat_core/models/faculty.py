@@ -59,7 +59,8 @@ class OpFaculty(models.Model):
     work_function = fields.Char()
     career = fields.Char()
     curriculum = fields.Html()
-    
+    batch_ids = fields.Many2many('op.batch','batch_faculty_rel',string="Batch(es)")
+
     
     @api.onchange('first_name','last_name')
     def _onchange_name(self):
