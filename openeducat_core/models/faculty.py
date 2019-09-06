@@ -69,11 +69,13 @@ class OpFaculty(models.Model):
 
     @api.model
     def create(self,data):
-        if not data.get("name"):
-            data.update(name=u'{} {}'.format(self.first_name,self.last_name))
+        if not data.get("name") and 'first_name' in data and 'last_name' in data:
+            data.update(name=u'{} {}'.format(data['first_name'],data['last_name']))
         record=super(OpFaculty, self).create(data)
         vals = {}
         vals.update(
+            last_name=record.last_name,
+            first_name=record.first_name,
             name=record.name,
             phone=record.work_phone,
             mobile = record.mobile_phone,

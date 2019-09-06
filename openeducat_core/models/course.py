@@ -28,11 +28,11 @@ class OpCourse(models.Model):
     
     name = fields.Char('Name', required=True)
     code = fields.Char('Code', size=16, required=True)
-    parent_id = fields.Many2one('op.course', 'Parent Course')
-    section = fields.Char('Section', size=32)
-    evaluation_type = fields.Selection(
-        [('normal', 'Normal'), ('GPA', 'GPA'), ('CWA', 'CWA'), ('CCE', 'CCE')],
-        'Evaluation Type', default="normal", required=True)
+#     parent_id = fields.Many2one('op.course', 'Parent Course')
+#     section = fields.Char('Section', size=32)
+#     evaluation_type = fields.Selection(
+#         [('normal', 'Normal'), ('GPA', 'GPA'), ('CWA', 'CWA'), ('CCE', 'CCE')],
+#         'Evaluation Type', default="normal",)
     subject_ids = fields.One2many(
         'op.subject', 'course_id', string='Subject(s)')
     batch_ids = fields.One2many(
@@ -43,12 +43,12 @@ class OpCourse(models.Model):
     
     summary = fields.Html()
     
-    category_ids = fields.Many2many('product.category')
+    category_ids = fields.Many2many('product.category',required=True)
        
     topic_ids = fields.One2many('op.course.topic','course_id')
     
-    max_unit_load = fields.Float("Maximum Unit Load")
-    min_unit_load = fields.Float("Minimum Unit Load")
+#     max_unit_load = fields.Float("Maximum Unit Load")
+#     min_unit_load = fields.Float("Minimum Unit Load")
     recipients = fields.Char()
     duration = fields.Char()
     schedule = fields.Text()

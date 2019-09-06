@@ -9,11 +9,11 @@
 				<tree string="Course">
 					<field name="name" />
 					<field name="code" />
-					<field name="section" />
+<!-- 					<field name="section" />
 					<field name="evaluation_type" />
 					<field name="parent_id" />
 					<field name="subject_ids" />
-				</tree>
+ -->				</tree>
 			</field>
 		</record>
 		<record id="view_op_course_form" model="ir.ui.view">
@@ -37,13 +37,13 @@
 								<field name="code" />
 								<field name="category_ids" widget="many2many_tags" />
 							</group>
-							<group name="main2">
+<!-- 							<group name="main2">
 								<field name="evaluation_type" />
 								<field name="parent_id" />
 								<field name="min_unit_load" />
 								<field name="max_unit_load" />
 							</group>
-						</group>
+ -->						</group>
 						<notebook>
 							<page name="data" string="Data">
 								<group>
@@ -141,15 +141,17 @@
 					<field name="name" />
 					<field name="code" />
 					<!-- <field name="section" /> -->
+<!-- 
 					<field name="evaluation_type" />
 					<field name="parent_id" />
+ -->
 					<newline />
 					<group expand="0" string="Group By...">
-						<filter context="{'group_by':'evaluation_type'}" domain="[]"
+<!-- 						<filter context="{'group_by':'evaluation_type'}" domain="[]"
 							string="Evaluation Type" />
 						<filter context="{'group_by':'parent_id'}" domain="[]"
 							string="Parent Course" />
-					</group>
+ -->					</group>
 				</search>
 			</field>
 		</record>
