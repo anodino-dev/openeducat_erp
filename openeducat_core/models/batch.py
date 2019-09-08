@@ -35,28 +35,16 @@ class OpBatch(models.Model):
     faculty_ids = fields.Many2many('op.faculty','batch_faculty_rel')
     _sql_constraints = [
         ('unique_batch_code',
-         'unique(code)', 'Code should be unique per batch!')]
+         'unique(code,course_id)', 'Code should be unique per batch!')]
 
     @api.multi
     @api.constrains('start_date', 'end_date')
     def check_dates(self):
         for record in self:
-            start_date = fields.Date.from_string(record.start_date)
-            end_date = fields.Date.from_string(record.end_date)
-            if start_date > end_date:
-                raise ValidationError(_("End Date cannot be set before \
-                Start Date."))
+            if record.end_date:
+                start_date = fields.Date.from_string(record.start_date)
+                end_date = fields.Date.from_string(record.end_date)
+                if start_date > end_date:
+                    raise ValidationError(_("End Date cannot be set before \
+                    Start Date."))
 
-    @api.model
-    def name_search(self, name, args=None, operator='ilike', limit=100):
-        if self.env.context.get('get_parent_batch', False):
-            lst = []
-            lst.append(self.env.context.get('course_id'))
-            courses = self.env['op.course'].browse(lst)
-            while courses.parent_id:
-                lst.append(courses.parent_id.id)
-                courses = courses.parent_id
-            batches = self.env['op.batch'].search([('course_id', 'in', lst)])
-            return batches.name_get()
-        return super(OpBatch, self).name_search(
-            name, args, operator=operator, limit=limit)
