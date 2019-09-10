@@ -80,6 +80,7 @@ class OpFaculty(models.Model):
             phone=record.work_phone,
             mobile = record.mobile_phone,
             vat = record.identification_id,
+            email = record.work_email,
             supplier = True,
             employee = True,
             customer = False,            
