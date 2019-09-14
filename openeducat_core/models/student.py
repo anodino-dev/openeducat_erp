@@ -74,6 +74,11 @@ class OpStudent(models.Model):
     course_detail_ids = fields.One2many('op.student.course', 'student_id',
                                         'Course Details')
 
+    @api.onchange('first_name','last_name')
+    def _onchange_name(self):
+        if self.first_name and self.last_name:
+            self.name="{} {}".format(self.first_name,self.last_name)
+            
     @api.multi
     @api.constrains('birth_date')
     def _check_birthdate(self):
