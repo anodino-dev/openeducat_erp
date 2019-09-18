@@ -24,9 +24,9 @@ from odoo import models, fields,_
 
 class OpCourse(models.Model):
     _name = 'op.course'
-    _inherit = ['website.seo.metadata']
+    _inherit = ['website.seo.metadata','mail.thread' ]
     
-    name = fields.Char('Name', required=True)
+    name = fields.Char('Name', required=True ,track_visibility='always')
     code = fields.Char('Code', size=16, required=True)
 #     parent_id = fields.Many2one('op.course', 'Parent Course')
 #     section = fields.Char('Section', size=32)
@@ -34,10 +34,10 @@ class OpCourse(models.Model):
 #         [('normal', 'Normal'), ('GPA', 'GPA'), ('CWA', 'CWA'), ('CCE', 'CCE')],
 #         'Evaluation Type', default="normal",)
     subject_ids = fields.One2many(
-        'op.subject', 'course_id', string='Subject(s)')
+        'op.subject', 'course_id', string='Subject(s)' ,track_visibility='onchange')
     batch_ids = fields.One2many(
-        'op.batch', 'course_id', string='Batch(es)')
-    faculty_ids = fields.Many2many('op.faculty','faculty_course_rel')
+        'op.batch', 'course_id', string='Batch(es)' ,track_visibility='onchange')
+    faculty_ids = fields.Many2many('op.faculty','faculty_course_rel' ,track_visibility='onchange')
     
     fullname = fields.Char(required=True)
     

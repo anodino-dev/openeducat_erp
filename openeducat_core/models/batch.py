@@ -25,17 +25,18 @@ from odoo.exceptions import ValidationError
 
 class OpBatch(models.Model):
     _name = 'op.batch'
+    _inherit =[ 'mail.thread' ]
 
-    code = fields.Char('Code', size=16, required=True)
-    name = fields.Char('Name', size=32, required=True)
+    code = fields.Char('Code', size=16, required=True ,track_visibility='always')
+    name = fields.Char('Name', size=32, required=True ,track_visibility='onchange')
     start_date = fields.Date(
-        'Start Date', required=True, default=fields.Date.today())
-    end_date = fields.Date('End Date')
-    course_id = fields.Many2one('op.course', 'Course', required=True)
-    faculty_ids = fields.Many2many('op.faculty','batch_faculty_rel')
+        'Start Date', required=True, default=fields.Date.today() ,track_visibility='onchange')
+    end_date = fields.Date('End Date' ,track_visibility='onchange')
+    course_id = fields.Many2one('op.course', 'Course', required=True ,track_visibility='onchange')
+    faculty_ids = fields.Many2many('op.faculty','batch_faculty_rel' ,track_visibility='onchange')
     _sql_constraints = [
         ('unique_batch_code',
-         'unique(code,course_id)', 'Code should be unique per batch!')]
+         'unique(code,course_id)', 'Course and Code combination should be unique per batch!')]
 
     @api.multi
     @api.constrains('start_date', 'end_date')

@@ -26,6 +26,7 @@ from odoo.exceptions import ValidationError
 class OpStudentCourse(models.Model):
     _name = 'op.student.course'
     _description = 'Student Course Details'
+    _inherit = [ 'mail.thread' ]
 
     student_id = fields.Many2one('op.student', 'Student', ondelete="cascade")
     course_id = fields.Many2one('op.course', 'Course', required=True)
@@ -72,7 +73,7 @@ class OpStudent(models.Model):
     gr_no = fields.Char("GR Number", size=20)
     category_id = fields.Many2one('op.category', 'Category')
     course_detail_ids = fields.One2many('op.student.course', 'student_id',
-                                        'Course Details')
+                                        'Course Details' ,track_visibility='onchange')
 
     @api.onchange('first_name','last_name')
     def _onchange_name(self):

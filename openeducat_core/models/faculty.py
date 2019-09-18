@@ -29,6 +29,7 @@ class OpFaculty(models.Model):
 #                'res.partner': 'partner_id',
                 'hr.employee': 'emp_id'
                  }
+    _inherit =[ 'mail.thread' ]
 
     partner_id = fields.Many2one(
         'res.partner', 'Partner', related='address_home_id', ondelete="restrict")
@@ -53,13 +54,13 @@ class OpFaculty(models.Model):
 #     last_login = fields.Datetime(
 #         'Latest Connection', related='emp_id.user_id.login_date',
 #         readonly=1)
-    faculty_subject_ids = fields.Many2many('op.subject', string='Subject(s)')
-    course_ids =  fields.Many2many('op.course', 'faculty_course_rel', string='Course(s)')
+    faculty_subject_ids = fields.Many2many('op.subject', string='Subject(s)' ,track_visibility='onchange')
+    course_ids =  fields.Many2many('op.course', 'faculty_course_rel', string='Course(s)' ,track_visibility='onchange')
     contact_address = fields.Char(related="address_home_id.contact_address")
     work_function = fields.Char()
     career = fields.Char()
     curriculum = fields.Html()
-    batch_ids = fields.Many2many('op.batch','batch_faculty_rel',string="Batch(es)")
+    batch_ids = fields.Many2many('op.batch','batch_faculty_rel',string="Batch(es)" ,track_visibility='onchange')
 
     
     @api.onchange('first_name','last_name')
