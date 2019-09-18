@@ -89,6 +89,11 @@
 							'!=', False)]}"/> -->
 					</header>
 					<sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                        </button>
+                    </div>
 						<field name="image" widget="image" class="oe_left oe_avatar" />
 						<field name="name" invisible="1" />
 						<field name="partner_id" readonly="1" context="{'show_address_only': True}"/>

@@ -26,6 +26,7 @@ class OpCourse(models.Model):
     _name = 'op.course'
     _inherit = ['website.seo.metadata','mail.thread' ]
     
+    active = fields.Boolean(track_visibility='onchange',default=True)
     name = fields.Char('Name', required=True ,track_visibility='always')
     code = fields.Char('Code', size=16, required=True)
 #     parent_id = fields.Many2one('op.course', 'Parent Course')

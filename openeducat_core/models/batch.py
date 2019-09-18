@@ -27,6 +27,7 @@ class OpBatch(models.Model):
     _name = 'op.batch'
     _inherit =[ 'mail.thread' ]
 
+    active = fields.Boolean(track_visibility='onchange',default=True)
     code = fields.Char('Code', size=16, required=True ,track_visibility='always')
     name = fields.Char('Name', size=32, required=True ,track_visibility='onchange')
     start_date = fields.Date(

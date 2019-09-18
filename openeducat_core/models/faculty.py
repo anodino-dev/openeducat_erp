@@ -31,6 +31,7 @@ class OpFaculty(models.Model):
                  }
     _inherit =[ 'mail.thread' ]
 
+    active = fields.Boolean(track_visibility='onchange',default=True)
     partner_id = fields.Many2one(
         'res.partner', 'Partner', related='address_home_id', ondelete="restrict")
     emp_id = fields.Many2one('hr.employee', 'Employee',required=True, ondelete="cascade")
