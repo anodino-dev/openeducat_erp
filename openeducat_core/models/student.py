@@ -52,7 +52,7 @@ class OpStudent(models.Model):
     _inherits = {'res.partner': 'partner_id'}
 
 #     first_name = fields.Char('First Name', size=128)
-    middle_name = fields.Char('Middle Name', size=128)
+#    middle_name = fields.Char('Middle Name', size=128)
 #     last_name = fields.Char('Last Name', size=128)
     birth_date = fields.Date('Birth Date')
     blood_group = fields.Selection(

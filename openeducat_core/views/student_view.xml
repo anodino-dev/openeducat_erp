@@ -99,6 +99,7 @@
 								options="{'no_create_edit': True}"
 								attrs="{'required':[('already_partner','=',True)],'invisible': [('already_partner','=', False)]}" />
 						</div>
+						<field name="name" invisible="1"/>
 						<field name="image" widget="image" class="oe_left oe_avatar" />
 						<div class="oe_title">
 							<h3>
@@ -110,9 +111,11 @@
 										<td style="padding-right:10px;">
 											<field name="first_name" required="1" placeholder="First Name" />
 										</td>
+<!--
 										<td style="padding-right:10px;">
 											<field name="middle_name" placeholder="Middle Name" />
 										</td>
+-->
 										<td style="padding-right:10px;">
 											<field name="last_name" placeholder="Last Name"
 												required="1" />
