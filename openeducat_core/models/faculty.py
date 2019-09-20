@@ -62,8 +62,13 @@ class OpFaculty(models.Model):
     career = fields.Char()
     curriculum = fields.Html()
     batch_ids = fields.Many2many('op.batch','batch_faculty_rel',string="Batch(es)" ,track_visibility='onchange')
-
-    
+    street =fields.Char(related='address_home_id.street')
+    street2 =fields.Char(related='address_home_id.street2')
+    city =fields.Char(related='address_home_id.city')
+    zip =fields.Char(related='address_home_id.zip')
+    state_id =fields.Many2one(related='address_home_id.state_id')
+    country_id =fields.Many2one(related='address_home_id.country_id')
+        
     @api.onchange('first_name','last_name')
     def _onchange_name(self):
         if self.first_name and self.last_name:
@@ -74,18 +79,16 @@ class OpFaculty(models.Model):
         if not data.get("name") and 'first_name' in data and 'last_name' in data:
             data.update(name=u'{} {}'.format(data['first_name'],data['last_name']))
         record=super(OpFaculty, self).create(data)
-        vals = {}
+        vals = data
         vals.update(
-            last_name=record.last_name,
-            first_name=record.first_name,
-            name=record.name,
             phone=record.work_phone,
             mobile = record.mobile_phone,
             vat = record.identification_id,
             email = record.work_email,
             supplier = True,
             employee = True,
-            customer = False,            
+            customer = False,
+                        
             )
         partner = self.env['res.partner'].create(vals)
         record.write({'address_home_id': partner.id})

@@ -136,14 +136,10 @@
 									<field name="category_id" />
 									<field name="emergency_contact" context="{'show_address': 1}"
 										options='{"always_reload": True}' />
-									<field name="user_id" string="User" readonly="1" />
 									<field name="email" required="1" />
+									<field name="vat" required="1"/>
 								</group>
 								<group string="Address Detail" name="address">
-									<label for="type" />
-									<div name="div_type">
-										<field class="oe_inline" name="type" />
-									</div>
 									<label for="street" string="Address" />
 									<div name="div_address">
 										<field name="street" placeholder="Street..." />
