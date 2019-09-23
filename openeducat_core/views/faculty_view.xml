@@ -28,13 +28,10 @@
 										</a>
 									</h4>
 									<ul>
-<!-- 										<li t-if="record.address_home_id.raw_value">
-											Address:
-											<field name="address_home_id" />
-											<span t-esc="address_home_id.contact_address" />
-										</li>
- -->
- 										<li t-if="record.work_phone.raw_value">
+										<!-- <li t-if="record.address_home_id.raw_value"> Address: <field 
+											name="address_home_id" /> <span t-esc="address_home_id.contact_address" /> 
+											</li> -->
+										<li t-if="record.work_phone.raw_value">
 											Tel:
 											<field name="work_phone" />
 										</li>
@@ -89,14 +86,17 @@
 							'!=', False)]}"/> -->
 					</header>
 					<sheet>
-                    <div class="oe_button_box" name="button_box">
-                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
-                            <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
-                        </button>
-                    </div>
+						<div class="oe_button_box" name="button_box">
+							<button name="toggle_active" type="object" class="oe_stat_button"
+								icon="fa-archive">
+								<field name="active" widget="boolean_button"
+									options="{&quot;terminology&quot;: &quot;archive&quot;}" />
+							</button>
+						</div>
 						<field name="image" widget="image" class="oe_left oe_avatar" />
 						<field name="name" invisible="1" />
-						<field name="partner_id" readonly="1" context="{'show_address_only': True}"/>
+						<field name="partner_id" readonly="1"
+							context="{'show_address_only': True}" />
 						<div class="oe_title">
 							<!-- <h1> <field name="title" placeholder="Title" style="width: 30%" 
 								/> </h1> -->
@@ -116,7 +116,7 @@
 								</table>
 							</h1>
 						</div>
-						<field name="contact_address"/>
+						<field name="contact_address" />
 						<!-- <group string="Address Detail" name="address"> <label for="type" 
 							/> <div name="div_type"> <field class="oe_inline" name="type" /> </div> <label 
 							for="street" string="Address" /> <div name="div_address"> <field name="street" 
@@ -128,35 +128,35 @@
 							class="oe_no_button" options='{"no_open": True}' /> </div> </group> -->
 						<group col="6" colspan="4">
 							<field name="gender" />
-							<field name="work_phone" required="1"/>
-							<field name="mobile_phone" required="1"/>
-							<field name="work_email" required="1"/>
-							<field name="work_location" required="1"/>
-							<field name="work_function" required="1"/>
-                            <field name="identification_id" required="1"/>
-                            <field name="ssnid" />							
+							<field name="work_phone" required="1" />
+							<field name="mobile_phone" required="1" />
+							<field name="work_email" required="1" />
+							<field name="work_location" required="1" />
+							<field name="work_function" required="1" />
+							<field name="identification_id" required="1" />
+							<field name="ssnid" />
 						</group>
-                                <group string="Address Detail" name="address">
-                                    <label for="street" string="Address" />
-                                    <div name="div_address">
-                                        <field name="street" placeholder="Street..." />
-                                        <field name="street2" placeholder="Street2" />
-                                        <div class="address_format">
-                                            <field name="city" placeholder="City" style="width: 40%%" />
-                                            <field name="state_id" class="oe_no_button"
-                                                placeholder="State" style="width: 37%%" options='{"no_open": True}' />
-                                            <field name="zip" placeholder="ZIP" style="width: 20%%" />
-                                        </div>
-                                        <field name="country_id" placeholder="Country" class="oe_no_button"
-                                            options='{"no_open": True}' />
-                                    </div>
-                                </group>
+						<group string="Address Detail" name="address">
+							<label for="street" string="Address" />
+							<div name="div_address">
+								<field name="street" placeholder="Street..." />
+								<field name="street2" placeholder="Street2" />
+								<div class="address_format">
+									<field name="city" placeholder="City" style="width: 40%%" />
+									<field name="state_id" class="oe_no_button" placeholder="State"
+										style="width: 37%%" options='{"no_open": True}' />
+									<field name="zip" placeholder="ZIP" style="width: 20%%" />
+								</div>
+								<field name="country_id" placeholder="Country" class="oe_no_button"
+									options='{"no_open": True}' />
+							</div>
+						</group>
 						<notebook colspan="4">
 							<page name="personal_information" string="Personal Information">
 								<group col="4">
 									<field name="birthday" />
 									<field name="career" />
-									<field name="curriculum"/>
+									<field name="curriculum" />
 									<!-- <field name="blood_group" /> -->
 									<!-- <field name="nationality" /> -->
 									<!-- <field name="visa_info" /> -->
@@ -166,21 +166,22 @@
 									<!-- <field name='emp_id' readonly="1"/> -->
 								</group>
 							</page>
-<!--                             <page name="subjects" string="Subjects">
-                                <field name="faculty_subject_ids" nolabel="1" />
-                            </page>
- -->                            <page name="courses" string="Courses">
-                                <field name="course_ids" nolabel="1" />
-                            </page>
-                            <page name="batches" string="Batches">
-                                <field name="batch_ids" nolabel="1" />
-                            </page>
+							<!-- <page name="subjects" string="Subjects"> <field name="faculty_subject_ids" 
+								nolabel="1" /> </page> -->
+							<page name="courses" string="Courses">
+								<field name="course_ids" nolabel="1"
+									options="{'no_create':True}" />
+							</page>
+							<page name="batches" string="Batches">
+								<field name="batch_ids" nolabel="1"
+									options="{'no_create':True}" />
+							</page>
 						</notebook>
 					</sheet>
-                    <div class="oe_chatter">
-                        <field name="message_follower_ids" widget="mail_followers" />
-                        <field name="message_ids" widget="mail_thread" />
-                    </div>
+					<div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers" />
+						<field name="message_ids" widget="mail_thread" />
+					</div>
 				</form>
 			</field>
 		</record>

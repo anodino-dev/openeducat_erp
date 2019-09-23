@@ -40,7 +40,9 @@ class OpCourse(models.Model):
         'op.batch', 'course_id', string='Batch(es)' ,track_visibility='onchange')
     faculty_ids = fields.Many2many('op.faculty','faculty_course_rel' ,track_visibility='onchange')
     
-    fullname = fields.Char(required=True)
+    fullname = fields.Char(size=255,required=True)
+
+    short_description = fields.Html(required=True)
     
     summary = fields.Html()
     
