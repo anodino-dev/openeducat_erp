@@ -144,11 +144,12 @@
 								<div class="address_format">
 									<field name="city" placeholder="City" style="width: 40%%" />
 									<field name="state_id" class="oe_no_button" placeholder="State"
-										style="width: 37%%" options='{"no_open": True}' />
+										style="width: 37%%" options='{"no_open": True,"no_create":True}'
+										 domain="[['country_id','=',country_id]]" />
 									<field name="zip" placeholder="ZIP" style="width: 20%%" />
 								</div>
 								<field name="country_id" placeholder="Country" class="oe_no_button"
-									options='{"no_open": True}' />
+									options='{"no_open": True,"no_create":True}' />
 							</div>
 						</group>
 						<notebook colspan="4">
@@ -169,12 +170,10 @@
 							<!-- <page name="subjects" string="Subjects"> <field name="faculty_subject_ids" 
 								nolabel="1" /> </page> -->
 							<page name="courses" string="Courses">
-								<field name="course_ids" nolabel="1"
-									options="{'no_create':True}" />
+								<field name="course_ids" nolabel="1" options="{'no_create':True}" />
 							</page>
 							<page name="batches" string="Batches">
-								<field name="batch_ids" nolabel="1"
-									options="{'no_create':True}" />
+								<field name="batch_ids" nolabel="1" options="{'no_create':True}" />
 							</page>
 						</notebook>
 					</sheet>

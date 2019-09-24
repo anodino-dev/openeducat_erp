@@ -53,8 +53,8 @@
         'dashboard/student_dashboard_view.xml',
         'dashboard/faculty_dashboard_view.xml',
         'menu/openeducat_core_menu.xml',
-        'menu/faculty_menu.xml',
-        'menu/student_menu.xml',
+#         'menu/faculty_menu.xml',
+#         'menu/student_menu.xml',
     ],
     'demo': [
         'demo/homepage_template.xml',
