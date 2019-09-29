@@ -125,8 +125,7 @@
                                 </table>
                             </h1>
                         </div>
-                        <notebook colspan="4">
-                            <page name="personal_information" string="Personal Information">
+                            <group name="personal_information" string="Personal Information">
                                 <group col="4" colspan="4" name="personal_detail">
                                     <field name="email" required="1" />
                                     <field name="vat" required="1" />
@@ -140,7 +139,7 @@
                                     <field name="blood_group" />
                                     <field name="visa_info" />
                                 </group>
-                                <group string="Address Detail" name="address">
+                                <group name="address">
                                     <label for="street" string="Address" />
                                     <div name="div_address">
                                         <field name="street" placeholder="Street..." />
@@ -163,7 +162,8 @@
                                             options="{&quot;no_open&quot;: True,&quot;no_create&quot;:True}" />
                                     </div>
                                 </group>
-                            </page>
+                            </group>
+                        <notebook colspan="4">
                             <page name="educational" string="Educational">
                                 <!-- <group col="4" colspan="4"> <field name="gr_no" /> </group> -->
                                 <group>
