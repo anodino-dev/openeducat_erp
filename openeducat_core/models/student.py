@@ -87,3 +87,11 @@ class OpStudent(models.Model):
             if record.birth_date > fields.Date.today():
                 raise ValidationError(_(
                     "Birth Date can't be greater than current date!"))
+
+    @api.onchange('zip_id')
+    def onchange_zip_id(self):
+        if self.zip_id:
+            self.zip = self.zip_id.name
+            self.city = self.zip_id.city
+            self.state_id = self.zip_id.state_id
+            self.country_id = self.zip_id.country_id

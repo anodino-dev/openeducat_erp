@@ -68,7 +68,8 @@ class OpFaculty(models.Model):
     zip =fields.Char(related='address_home_id.zip')
     state_id =fields.Many2one(related='address_home_id.state_id')
     country_id =fields.Many2one(related='address_home_id.country_id')
-        
+    zip_id = fields.Many2one(related='address_home_id.zip_id')        
+
     @api.onchange('first_name','last_name')
     def _onchange_name(self):
         if self.first_name and self.last_name:
@@ -93,3 +94,11 @@ class OpFaculty(models.Model):
         partner = self.env['res.partner'].create(vals)
         record.write({'address_home_id': partner.id})
         return record
+
+    @api.onchange('zip_id')
+    def onchange_zip_id(self):
+        if self.zip_id:
+            self.zip = self.zip_id.name
+            self.city = self.zip_id.city
+            self.state_id = self.zip_id.state_id
+            self.country_id = self.zip_id.country_id

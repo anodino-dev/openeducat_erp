@@ -23,35 +23,30 @@
                                             <field name="first_name" />
                                             <!-- <t t-if="record.middle_name.raw_value"> 
                                                 <field name="middle_name" /> </t> -->
-                                            <t
-                                                t-if="record.last_name.raw_value">
+                                            <t t-if="record.last_name.raw_value">
                                                 <field name="last_name" />
                                             </t>
                                         </a>
                                     </h4>
                                     <ul>
                                         <!-- <li t-if="record.address_home_id.raw_value"> 
-                                            Address: <field name="address_home_id" /> <span t-esc="address_home_id.contact_address" 
-                                            /> </li> -->
-                                        <li
-                                            t-if="record.work_phone.raw_value">
+                                            Address: <field name="address_home_id" /> <span t-esc="address_home_id.contact_address" /> 
+                                            </li> -->
+                                        <li t-if="record.work_phone.raw_value">
                                             Tel:
                                             <field name="work_phone" />
                                         </li>
-                                        <li
-                                            t-if="record.mobile_phone.raw_value">
+                                        <li t-if="record.mobile_phone.raw_value">
                                             Mobile:
                                             <field name="mobile_phone" />
                                         </li>
-                                        <li
-                                            t-if="record.work_email.raw_value">
-                                            <a
-                                                t-attf-href="mailto:#{record.work_email.value}">
+                                        <li t-if="record.work_email.raw_value">
+                                            <a t-attf-href="mailto:#{record.work_email.value}">
                                                 <field name="work_email" />
                                             </a>
                                         </li>
-                                        <!-- <li t-if="record.lang.raw_value"> 
-                                            Language: <field name="lang" /> </li> -->
+                                        <!-- <li t-if="record.lang.raw_value"> Language: 
+                                            <field name="lang" /> </li> -->
                                     </ul>
                                 </div>
                             </div>
@@ -90,39 +85,35 @@
             <field name="arch" type="xml">
                 <form string="Faculty">
                     <header groups="openeducat_core.group_op_back_office">
-                        <!-- <button name="295" string="Create Employee" 
-                            type="action" class="oe_highlight" attrs="{'invisible': [('emp_id', '!=', 
-                            False)]}"/> -->
+                        <!-- <button name="295" string="Create Employee" type="action" class="oe_highlight" 
+                            attrs="{'invisible': [('emp_id', '!=', False)]}"/> -->
                     </header>
                     <sheet>
                         <div class="oe_button_box" name="button_box">
-                            <button name="toggle_active" type="object"
-                                class="oe_stat_button" icon="fa-archive">
+                            <button name="toggle_active" type="object" class="oe_stat_button"
+                                icon="fa-archive">
                                 <field name="active" widget="boolean_button"
                                     options="{&quot;terminology&quot;: &quot;archive&quot;}" />
                             </button>
                         </div>
-                        <field name="image" widget="image"
-                            class="oe_left oe_avatar" />
+                        <field name="image" widget="image" class="oe_left oe_avatar" />
                         <field name="name" invisible="1" />
                         <field name="partner_id" readonly="1"
                             context="{'show_address_only': True}" />
                         <div class="oe_title">
-                            <!-- <h1> <field name="title" placeholder="Title" 
-                                style="width: 30%" /> </h1> -->
+                            <!-- <h1> <field name="title" placeholder="Title" style="width: 
+                                30%" /> </h1> -->
                             <h1>
                                 <table>
                                     <tr>
                                         <td style="padding-right:10px">
-                                            <field name="first_name"
-                                                required="1"
+                                            <field name="first_name" required="1"
                                                 placeholder="First Name" />
                                         </td>
-                                        <!-- <td style="padding-right:10px"><field 
-                                            name="middle_name" placeholder="Middle Name" /></td> -->
+                                        <!-- <td style="padding-right:10px"><field name="middle_name" 
+                                            placeholder="Middle Name" /></td> -->
                                         <td style="padding-right:10px">
-                                            <field name="last_name"
-                                                placeholder="Last Name" />
+                                            <field name="last_name" placeholder="Last Name" />
                                         </td>
 
                                     </tr>
@@ -130,25 +121,27 @@
                             </h1>
                         </div>
                         <field name="contact_address" />
-                        <!-- <group string="Address Detail" name="address"> 
-                            <label for="type" /> <div name="div_type"> <field class="oe_inline" name="type" 
-                            /> </div> <label for="street" string="Address" /> <div name="div_address"> 
-                            <field name="street" placeholder="Street..." /> <field name="street2" placeholder="Street2" 
-                            /> <div class="address_format"> <field name="city" placeholder="City" style="width: 
-                            40%" /> <field name="state_id" class="oe_no_button" placeholder="State" style="width: 
-                            37%" options='{"no_open": True}' /> <field name="zip" placeholder="ZIP" style="width: 
-                            20%" /> </div> <field name="country_id" placeholder="Country" class="oe_no_button" 
-                            options='{"no_open": True}' /> </div> </group> -->
-                        <group col="6" colspan="4">
-                            <field name="work_email" required="1" />
-                            <field name="mobile_phone" required="1" />
-                            <field name="work_phone" />
-                            <field name="identification_id"
-                                required="1" />
-                            <field name="ssnid" />
-                            <field name="work_location" />
-                            <field name="work_function" />
-                            <field name="gender" />
+                        <!-- <group string="Address Detail" name="address"> <label for="type" 
+                            /> <div name="div_type"> <field class="oe_inline" name="type" /> </div> <label for="street" 
+                            string="Address" /> <div name="div_address"> <field name="street" placeholder="Street..." 
+                            /> <field name="street2" placeholder="Street2" /> <div class="address_format"> <field name="city" 
+                            placeholder="City" style="width: 40%" /> <field name="state_id" class="oe_no_button" placeholder="State" 
+                            style="width: 37%" options='{"no_open": True}' /> <field name="zip" placeholder="ZIP" style="width: 
+                            20%" /> </div> <field name="country_id" placeholder="Country" class="oe_no_button" options='{"no_open": 
+                            True}' /> </div> </group> -->
+                        <group>
+                            <group>
+                                <field name="work_email" required="1" />
+                                <field name="mobile_phone" required="1" />
+                                <field name="work_phone" />
+                                <field name="identification_id" required="1" />
+                            </group>
+                            <group>
+                                <field name="ssnid" />
+                                <field name="work_location" />
+                                <field name="work_function" />
+                                <field name="gender" />
+                            </group>
                         </group>
                         <group string="Address Detail" name="address">
                             <label for="street" string="Address" />
@@ -156,24 +149,24 @@
                                 <field name="street" placeholder="Street..." />
                                 <field name="street2" placeholder="Street2" />
                                 <div class="address_format">
-                                    <field name="city"
-                                        placeholder="City" style="width: 40%" />
+                                    <field name="zip_id"
+                                         options="{'create_name_field': 'city', 'no_open': True, 'no_create': True}"
+                                        placeholder="City completion" class="oe_edit_only" />
+                                    <field name="city" placeholder="City" style="width: 40%" />
                                     <field name="state_id" class="oe_no_button"
                                         placeholder="State" style="width: 37%"
                                         options="{&quot;no_open&quot;: True,&quot;no_create&quot;:True}"
                                         domain="[['country_id','=',country_id]]" />
-                                    <field name="zip" placeholder="ZIP"
-                                        style="width: 20%" />
+                                    <field name="zip" placeholder="ZIP" style="width: 20%" />
                                 </div>
-                                <field name="country_id"
-                                    placeholder="Country" class="oe_no_button"
+                                <field name="country_id" placeholder="Country"
+                                    class="oe_no_button"
                                     options="{&quot;no_open&quot;: True,&quot;no_create&quot;:True}" />
                             </div>
                         </group>
-                        <notebook colspan="4">
-                            <page name="personal_information"
-                                string="Personal Information">
-                                <group col="4">
+                        <notebook>
+                            <page name="personal_information" string="Personal Information">
+                                <group>
                                     <field name="birthday" />
                                     <field name="career" />
                                     <field name="curriculum" />
@@ -181,13 +174,13 @@
                                     <!-- <field name="nationality" /> -->
                                     <!-- <field name="visa_info" /> -->
                                     <!-- <field name="lang" /> -->
-                                    <!-- <field name="emergency_contact" 
-                                        context="{'show_address': 1}" options='{"always_reload": True}' /> -->
+                                    <!-- <field name="emergency_contact" context="{'show_address': 
+                                        1}" options='{"always_reload": True}' /> -->
                                     <!-- <field name='emp_id' readonly="1"/> -->
                                 </group>
                             </page>
-                            <!-- <page name="subjects" string="Subjects"> 
-                                <field name="faculty_subject_ids" nolabel="1" /> </page> -->
+                            <!-- <page name="subjects" string="Subjects"> <field name="faculty_subject_ids" 
+                                nolabel="1" /> </page> -->
                             <page name="courses" string="Courses">
                                 <field name="course_ids" nolabel="1"
                                     options="{'no_create':True}" />
@@ -215,12 +208,12 @@
                     <!-- <field name="blood_group" /> -->
                     <newline />
                     <group expand="0" string="Group By...">
-                        <!-- <filter name="blood_group" string="Blood Group" 
-                            domain="[]" context="{'group_by':'blood_group'}" /> -->
-                        <!-- <filter name="nationality" string="Nationality" 
-                            domain="[]" context="{'group_by':'nationality'}" /> -->
-                        <filter name="language" string="Language"
-                            domain="[]" context="{'group_by':'lang'}" />
+                        <!-- <filter name="blood_group" string="Blood Group" domain="[]" 
+                            context="{'group_by':'blood_group'}" /> -->
+                        <!-- <filter name="nationality" string="Nationality" domain="[]" 
+                            context="{'group_by':'nationality'}" /> -->
+                        <filter name="language" string="Language" domain="[]"
+                            context="{'group_by':'lang'}" />
                     </group>
                 </search>
             </field>
