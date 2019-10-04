@@ -42,6 +42,8 @@ class OpCourse(models.Model):
     
     fullname = fields.Char(size=255,required=True)
 
+    description = fields.Html(required=True)
+    
     short_description = fields.Html(required=True)
     
     summary = fields.Html()
