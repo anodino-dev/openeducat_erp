@@ -35,6 +35,9 @@ class OpBatch(models.Model):
     end_date = fields.Date('End Date' ,track_visibility='onchange')
     course_id = fields.Many2one('op.course', 'Course', required=True ,track_visibility='onchange')
     faculty_ids = fields.Many2many('op.faculty','batch_faculty_rel' ,track_visibility='onchange')
+    register_ids = fields.One2many('op.student.course', 'batch_id',
+                                        'Students' ,readonly=True)
+
     _sql_constraints = [
         ('unique_batch_code',
          'unique(code,course_id)', 'Course and Code combination should be unique per batch!')]
