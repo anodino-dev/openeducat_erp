@@ -39,6 +39,9 @@ class OpStudentCourse(models.Model):
             rec.name=rec.name_get()[0][1]
         
     def  name_get(self):
+        context = self.env.context
+        if 'from_course' in context:
+            return [(rec.id,u"{} en {}".format(rec.student_id.name,rec.batch_id.name)) for rec in self]
         return [(rec.id, rec.student_id.name) for rec in self]
 
     _sql_constraints = [
