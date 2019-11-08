@@ -29,8 +29,8 @@ class OpStudentCourse(models.Model):
 
     name = fields.Char(compute='_compute_name')
     student_id = fields.Many2one('op.student', 'Student', ondelete="cascade")
-    course_id = fields.Many2one('op.course', 'Course', required=True)
-    batch_id = fields.Many2one('op.batch', 'Batch', required=True)
+    course_id = fields.Many2one('op.course', 'Course', required=True,ondelete='restrict')
+    batch_id = fields.Many2one('op.batch', 'Batch', required=True,ondelete='restrict')
     roll_number = fields.Char('Roll Number')
     subject_ids = fields.Many2many('op.subject', string='Subjects')
     

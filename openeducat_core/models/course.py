@@ -37,7 +37,7 @@ class OpCourse(models.Model):
     subject_ids = fields.One2many(
         'op.subject', 'course_id', string='Subject(s)' ,track_visibility='onchange')
     batch_ids = fields.One2many(
-        'op.batch', 'course_id', string='Batch(es)' ,track_visibility='onchange')
+        'op.batch', 'course_id', string='Batch(es)' ,track_visibility='onchange' )
     faculty_ids = fields.Many2many('op.faculty','faculty_course_rel' ,track_visibility='onchange')
     
     fullname = fields.Char(size=255,required=True)

@@ -33,7 +33,7 @@ class OpBatch(models.Model):
     start_date = fields.Date(
         'Start Date', required=True, default=fields.Date.today() ,track_visibility='onchange')
     end_date = fields.Date('End Date' ,track_visibility='onchange')
-    course_id = fields.Many2one('op.course', 'Course', required=True ,track_visibility='onchange')
+    course_id = fields.Many2one('op.course', 'Course', required=True ,track_visibility='onchange',ondelete='restrict')
     faculty_ids = fields.Many2many('op.faculty','batch_faculty_rel' ,track_visibility='onchange')
     register_ids = fields.One2many('op.student.course', 'batch_id',
                                         'Students' ,readonly=True)

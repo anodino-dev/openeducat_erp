@@ -93,7 +93,7 @@
                             </page>
                             <page name="faculties" string="Faculties">
                                 <group name="faculty" string="Faculties">
-                                    <field name="faculty_ids" nolabel="1" />
+                                    <field name="faculty_ids" nolabel="1" options="{'no_create':True}"/>
                                 </group>
                             </page>
                             <page name="batches" string="Batches">
