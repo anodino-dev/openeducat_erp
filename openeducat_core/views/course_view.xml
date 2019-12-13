@@ -68,29 +68,6 @@
                                     </field>
                                 </group>
                             </page>
-                            <page name="details" string="Details">
-                                <group>
-                                    <field name="website_meta_description" />
-                                    <field name="website_meta_title" />
-                                    <field name="website_meta_keywords" />
-                                </group>
-                                <group>
-                                    <group>
-                                        <field name="recipients" />
-                                        <field name="duration" />
-                                        <field name="schedule" />
-                                        <field name="seats" />
-                                        <field name="requirements" />
-                                    </group>
-                                    <group>
-                                        <field name="teaching_hours" />
-                                        <field name="place" />
-                                        <field name="mode" />
-                                        <field name="type" />
-
-                                    </group>
-                                </group>
-                            </page>
                             <page name="faculties" string="Faculties">
                                 <group name="faculty" string="Faculties">
                                     <field name="faculty_ids" nolabel="1" options="{'no_create':True}"/>
