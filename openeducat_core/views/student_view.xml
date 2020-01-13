@@ -125,70 +125,50 @@
                                 </table>
                             </h1>
                         </div>
-                            <group name="personal_information" string="Personal Information">
-                                <group col="4" colspan="4" name="personal_detail">
-                                    <field name="email" required="1" />
-                                    <field name="vat" required="1" />
-                                    <field name="emergency_contact" context="{'show_address': 1}"
-                                        options="{&quot;always_reload&quot;: True}" />
-                                    <field name="lang" />
-                                    <field name="birth_date" />
-                                    <field name="nationality" />
-                                    <field name="category_id" />
-                                    <field name="gender" />
-                                    <field name="blood_group" />
-                                    <field name="visa_info" />
-                                </group>
-                                <group name="address">
-                                    <label for="street" string="Address" />
-                                    <div name="div_address">
-                                        <field name="street" placeholder="Street..." />
-                                        <field name="street2" placeholder="Street2" />
-                                        <div class="address_format">
-                                            <field name="zip_id"
-                                                options="{'create_name_field': 'city', 'no_open': True, 'no_create': True}"
-                                                placeholder="City completion" class="oe_edit_only" />
-                                            <field name="city" placeholder="City"
-                                                style="width: 40%" />
-                                            <field name="state_id" class="oe_no_button"
-                                                placeholder="State" style="width: 37%"
-                                                options="{&quot;no_open&quot;: True,&quot;no_create&quot;:True}"
-                                                domain="[['country_id','=',country_id]]" />
-                                            <field name="zip" placeholder="ZIP"
-                                                style="width: 20%" />
-                                        </div>
-                                        <field name="country_id" placeholder="Country"
-                                            class="oe_no_button"
-                                            options="{&quot;no_open&quot;: True,&quot;no_create&quot;:True}" />
-                                    </div>
-                                </group>
+                        <group name="personal_information" string="Personal Information">
+                            <group col="4" colspan="4" name="personal_detail">
+                                <field name="email" required="1" />
+                                <field name="vat" required="1" />
+                                <field name="emergency_contact" context="{'show_address': 1}"
+                                    options="{&quot;always_reload&quot;: True}" />
+                                <field name="lang" />
+                                <field name="birth_date" />
+                                <field name="nationality" />
+                                <field name="category_id" />
+                                <field name="gender" />
+                                <field name="blood_group" />
+                                <field name="visa_info" />
                             </group>
+                            <group name="address">
+                                <label for="street" string="Address" />
+                                <div name="div_address">
+                                    <field name="street" placeholder="Street..." />
+                                    <field name="street2" placeholder="Street2" />
+                                    <div class="address_format">
+                                        <field name="zip_id"
+                                            options="{'create_name_field': 'city', 'no_open': True, 'no_create': True}"
+                                            placeholder="City completion" class="oe_edit_only" />
+                                        <field name="city" placeholder="City"
+                                            style="width: 40%" />
+                                        <field name="state_id" class="oe_no_button"
+                                            placeholder="State" style="width: 37%"
+                                            options="{&quot;no_open&quot;: True,&quot;no_create&quot;:True}"
+                                            domain="[['country_id','=',country_id]]" />
+                                        <field name="zip" placeholder="ZIP" style="width: 20%" />
+                                    </div>
+                                    <field name="country_id" placeholder="Country"
+                                        class="oe_no_button"
+                                        options="{&quot;no_open&quot;: True,&quot;no_create&quot;:True}" />
+                                </div>
+                            </group>
+                        </group>
                         <notebook colspan="4">
                             <page name="educational" string="Educational">
                                 <!-- <group col="4" colspan="4"> <field name="gr_no" /> </group> -->
                                 <group>
                                     <separator string="Admission Details"
                                         colspan="4" />
-                                    <field name="course_detail_ids" nolabel="1">
-                                        <tree string="Course Details">
-                                            <field name="course_id" />
-                                            <field name="batch_id" />
-                                            <field name="roll_number" />
-                                            <field name="subject_ids" widget="many2many_tags" />
-                                        </tree>
-                                        <form>
-                                            <group cols="2" colspan="2">
-                                                <field name="course_id" />
-                                                <field name="batch_id"
-                                                    domain="[('course_id', '=', course_id)]" />
-                                                <field name="roll_number" />
-                                            </group>
-                                            <group col="4" string="Subjects">
-                                                <field name="subject_ids" colspan="4"
-                                                    nolabel="1" />
-                                            </group>
-                                        </form>
-                                    </field>
+                                    <field name="course_detail_ids" nolabel="1" context="{'from_parent_student':1,'default_student_id':id}"/>
                                 </group>
                             </page>
                         </notebook>
@@ -257,6 +237,40 @@
             <field name="sequence" eval="5" />
             <field name="view_mode">kanban</field>
             <field name="view_id" ref="kanban_view_student" />
+        </record>
+        <record id="view_op_student_course_tree" model="ir.ui.view">
+            <field name="name">op.student.course.tree</field>
+            <field name="model">op.student.course</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Course Details">
+                    <field name="course_id" />
+                    <field name="batch_id" />
+                    <field name="roll_number" />
+                    <field name="subject_ids" widget="many2many_tags" />
+                </tree>
+            </field>
+        </record>
+        <record id="view_op_student_course_form" model="ir.ui.view">
+            <field name="name">op.student.course.form</field>
+            <field name="model">op.student.course</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Student">
+                    <header />
+                    <sheet>
+                        <group cols="2" colspan="2">
+                            <field name="student_id" visible="context.get('from_parent_student')" readonly="1" />
+                            <field name="course_id" readonly="1"/>
+                            <field name="batch_id" domain="[('course_id', '=', course_id)]" readonly="1"/>
+                            <field name="roll_number" />
+                        </group>
+                        <group col="4" string="Subjects">
+                            <field name="subject_ids" colspan="4" nolabel="1" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
         </record>
     </data>
 </odoo>

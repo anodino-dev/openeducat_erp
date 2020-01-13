@@ -45,10 +45,14 @@
                         </group>
                         <notebook>
                             <page string="Faculties">
-                                <field name="faculty_ids" options="{'no_create':True}"/>
+                                <field name="faculty_ids" options="{'no_create':True}" />
                             </page>
                             <page string="Students">
-                                <field name="register_ids" options="{'no_create':True}"/>
+                                <field name="register_ids" options="{'no_create':True}">
+                                    <tree>
+                                        <field name="student_id" />
+                                    </tree>
+                                </field>
                             </page>
                         </notebook>
                     </sheet>

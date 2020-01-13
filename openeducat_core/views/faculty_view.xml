@@ -210,9 +210,10 @@
                             context="{'group_by':'blood_group'}" /> -->
                         <!-- <filter name="nationality" string="Nationality" domain="[]" 
                             context="{'group_by':'nationality'}" /> -->
-                        <filter name="language" string="Language" domain="[]"
+<!--                         <filter name="language" string="Language" domain="[]"
                             context="{'group_by':'lang'}" />
-                    </group>
+ -->
+                     </group>
                 </search>
             </field>
         </record>
