@@ -168,7 +168,8 @@
                                 <group>
                                     <separator string="Admission Details"
                                         colspan="4" />
-                                    <field name="course_detail_ids" nolabel="1" context="{'from_parent_student':1,'default_student_id':id}"/>
+                                    <field name="course_detail_ids" nolabel="1"
+                                        context="{'from_parent_student':1,'default_student_id':id}" />
                                 </group>
                             </page>
                         </notebook>
@@ -259,15 +260,21 @@
                 <form string="Student">
                     <header />
                     <sheet>
-                        <group cols="2" colspan="2">
-                            <field name="student_id" visible="context.get('from_parent_student')" readonly="1" />
-                            <field name="course_id" readonly="1"/>
-                            <field name="batch_id" domain="[('course_id', '=', course_id)]" readonly="1"/>
+                        <group>
+                            <field name="student_id" visible="context.get('from_parent_student')"
+                                readonly="1" />
+                            <field name="course_id" readonly="1" />
+                            <field name="batch_id" domain="[('course_id', '=', course_id)]"
+                                readonly="1" />
                             <field name="roll_number" />
                         </group>
-                        <group col="4" string="Subjects">
-                            <field name="subject_ids" colspan="4" nolabel="1" />
-                        </group>
+                        <notebook>
+                            <page string="Subjects">
+                                <group string="Subjects">
+                                    <field name="subject_ids" nolabel="1" />
+                                </group>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
