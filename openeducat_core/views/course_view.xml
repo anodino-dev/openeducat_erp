@@ -43,20 +43,34 @@
                                 <field name="code" />
                                 <field name="category_ids" widget="many2many_tags" />
                             </group>
-                            <group>
-                                <field name="short_description" />
-                            </group>
+
                             <!-- <group name="main2"> <field name="evaluation_type" /> <field 
                                 name="parent_id" /> <field name="min_unit_load" /> <field name="max_unit_load" /> </group> -->
                         </group>
                         <notebook>
+                            <page name="faculties" string="Editors">
+                                <group name="faculty" string="Editors">
+                                    <field name="faculty_ids" nolabel="1"
+                                        options="{'no_create':True}" />
+                                </group>
+                            </page>
+                            <page name="batches" string="Batches">
+                                <group name="batch" string="Batches">
+                                    <field
+                                        context="{'default_course_id': context.get('id', active_id)}"
+                                        name="batch_ids" nolabel="1" readonly="1" />
+                                </group>
+                            </page>
                             <page name="data" string="Data">
                                 <group>
                                     <group>
-                                        <field name="summary" />
+                                        <field name="short_description" />
                                     </group>
                                     <group>
                                         <field name="description" />
+                                    </group>
+                                    <group>
+                                        <field name="summary" />
                                     </group>
                                     <field name="topic_ids"
                                         context="{'default_course_id': context.get('id', active_id)}">
@@ -68,54 +82,11 @@
                                     </field>
                                 </group>
                             </page>
-                            <page name="faculties" string="Faculties">
-                                <group name="faculty" string="Faculties">
-                                    <field name="faculty_ids" nolabel="1" options="{'no_create':True}"/>
-                                </group>
-                            </page>
-                            <page name="batches" string="Batches">
-                                <group name="batch" string="Batches">
-                                    <field
-                                        context="{'default_course_id': context.get('id', active_id)}"
-                                        name="batch_ids" nolabel="1" readonly="1">
-                                        <form string="Batch">
-                                            <header
-                                                groups="openeducat_core.group_op_back_office"></header>
-                                            <sheet>
-                                                <group>
-                                                    <group>
-                                                        <field name="name" />
-                                                        <field name="code" />
-                                                    </group>
-                                                    <group>
-                                                        <field name="start_date" />
-                                                        <field name="end_date" />
-                                                    </group>
-                                                    <field name="faculty_ids" />
-                                                </group>
-                                            </sheet>
-                                        </form>
-                                    </field>
-                                </group>
-                            </page>
                             <page name="subjects" string="Subjects">
                                 <group name="subject" string="Subjects">
                                     <field
                                         context="{'default_course_id': context.get('id', active_id)}"
-                                        name="subject_ids" nolabel="1">
-                                        <form string="Subject">
-                                            <sheet>
-                                                <group col="4">
-                                                    <field name="name" />
-                                                    <field name="code" />
-                                                    <field name="type" />
-                                                    <field name="subject_type" />
-                                                    <field name="grade_weightage" />
-                                                </group>
-                                            </sheet>
-                                        </form>
-
-                                    </field>
+                                        name="subject_ids" nolabel="1" />
                                 </group>
                             </page>
                         </notebook>
