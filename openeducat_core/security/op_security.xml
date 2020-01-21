@@ -33,7 +33,7 @@
             <field name="name">Back Office Admin</field>
             <field name="category_id" ref="module_category_openeducat"/>
             <field name="users" eval="[(4, ref('base.user_root'))]"/>
-            <field name="implied_ids" eval="[(4, ref('openeducat_core.group_op_back_office')),(4, ref('base.group_system'))]"/>
+            <field name="implied_ids" eval="[(4, ref('openeducat_core.group_op_back_office'))]"/>
         </record>
 
         <record model="ir.rule" id="student_login_rule">
