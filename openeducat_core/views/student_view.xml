@@ -261,11 +261,10 @@
                     <header />
                     <sheet>
                         <group>
-                            <field name="student_id" visible="context.get('from_parent_student')"
-                                readonly="1" />
-                            <field name="course_id" readonly="1" />
-                            <field name="batch_id" domain="[('course_id', '=', course_id)]"
-                                readonly="1" />
+                            <field name="student_id" invisible="context.get('from_parent_student')"
+                                 />
+                            <field name="course_id" />
+                            <field name="batch_id" domain="[('course_id', '=', course_id)]" />
                             <field name="roll_number" />
                         </group>
                         <notebook>
