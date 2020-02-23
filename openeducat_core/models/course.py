@@ -19,7 +19,7 @@
 #
 ###############################################################################
 
-from odoo import models, fields,_
+from odoo import api,models, fields,_
 
 
 class OpCourse(models.Model):
@@ -49,6 +49,8 @@ class OpCourse(models.Model):
     summary = fields.Html()
     
     category_ids = fields.Many2many('product.category',required=True)
+
+    category_id = fields.Many2one('product.category',compute="_compute_category_id",store=True,readonly=True)
        
     topic_ids = fields.One2many('op.course.topic','course_id')
     
@@ -59,6 +61,13 @@ class OpCourse(models.Model):
         ('unique_course_code',
         'unique(code)', 'Code should be unique per course!')]
 
+
+    @api.multi
+    @api.depends('category_ids')
+    def _compute_category_id(self):
+        for rec in self:
+            if rec.category_ids:
+                rec.category_id=rec.category_ids[0]
 
 class OpCourseTopic(models.Model): 
     _name='op.course.topic'
