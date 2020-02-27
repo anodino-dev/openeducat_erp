@@ -88,7 +88,7 @@ class OpStudent(models.Model):
     @api.onchange('first_name','last_name')
     def _onchange_name(self):
         if self.first_name and self.last_name:
-            self.name="{} {}".format(self.first_name,self.last_name)
+            self.name=u"{} {}".format(self.first_name,self.last_name)
             
     @api.multi
     @api.constrains('birth_date')
