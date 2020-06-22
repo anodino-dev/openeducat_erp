@@ -14,3 +14,5 @@ class ResPartner(models.Model):
     
     first_name= fields.Char()
     last_name= fields.Char()
+    student = fields.Boolean()
+    faculty = fields.Boolean()

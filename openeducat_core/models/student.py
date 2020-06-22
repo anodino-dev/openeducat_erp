@@ -105,3 +105,8 @@ class OpStudent(models.Model):
             self.city = self.zip_id.city
             self.state_id = self.zip_id.state_id
             self.country_id = self.zip_id.country_id
+
+    @api.model
+    def create(self,data):
+        data['student']=True
+        return super(OpStudent, self).create(data)

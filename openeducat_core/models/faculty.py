@@ -89,7 +89,7 @@ class OpFaculty(models.Model):
             supplier = True,
             employee = True,
             customer = False,
-                        
+            faculty = True            
             )
         partner = self.env['res.partner'].create(vals)
         record.write({'address_home_id': partner.id})
