@@ -44,11 +44,12 @@
 
                         </group>
                         <notebook>
-                            <page string="Faculties">
+                            <page name="faculties" string="Faculties">
                                 <field name="faculty_ids" options="{'no_create':True}" />
                             </page>
-                            <page string="Students">
-                                <field name="register_ids" options="{'no_create':True}">
+                            <page name="students" string="Students">
+                                <field name="register_ids" options="{'no_create':True}"
+                                context="{'default_batch_id':id,'default_course_id': course_id}">
                                     <tree>
                                         <field name="student_id" />
                                     </tree>
