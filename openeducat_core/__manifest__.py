@@ -21,7 +21,7 @@
 
 {
     'name': 'OpenEduCat Core',
-    'version': '10.0.3.0.0',
+    'version': '10.0.4.0',
     'license': 'LGPL-3',
     'category': 'Education',
     "sequence": 1,
@@ -50,6 +50,7 @@
         'views/openeducat_template.xml',
         'views/website_assets.xml',
         'views/subject_registration_view.xml',
+        'views/res_partner_view.xml',
         'dashboard/student_dashboard_view.xml',
         'dashboard/faculty_dashboard_view.xml',
         'menu/openeducat_core_menu.xml',
