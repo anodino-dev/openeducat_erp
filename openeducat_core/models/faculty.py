@@ -80,19 +80,20 @@ class OpFaculty(models.Model):
         if not data.get("name") and 'first_name' in data and 'last_name' in data:
             data.update(name=u'{} {}'.format(data['first_name'],data['last_name']))
         record=super(OpFaculty, self).create(data)
-        vals = data
-        vals.update(
-            phone=record.work_phone,
-            mobile = record.mobile_phone,
-            vat = record.identification_id,
-            email = record.work_email,
-            supplier = True,
-            employee = True,
-            customer = False,
-            faculty = True            
-            )
-        partner = self.env['res.partner'].create(vals)
-        record.write({'address_home_id': partner.id})
+        if not record.address_home_id:
+            vals = data
+            vals.update(
+                phone=record.work_phone,
+                mobile = record.mobile_phone,
+                vat = record.identification_id,
+                email = record.work_email,
+                supplier = True,
+                employee = True,
+                customer = False,
+                faculty = True            
+                )
+            partner = self.env['res.partner'].create(vals)
+            record.write({'address_home_id': partner.id})
         return record
 
     @api.onchange('zip_id')
