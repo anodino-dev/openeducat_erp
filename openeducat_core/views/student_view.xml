@@ -246,8 +246,8 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <tree string="Course Details">
-                    <field name="course_id" />
-                    <field name="batch_id" />
+                    <field name="course_id" invisible="context.get('from_batch')" />
+                    <field name="batch_id" invisible="context.get('from_batch')"/>
                     <field name="roll_number" />
                     <field name="subject_ids" widget="many2many_tags" />
                 </tree>
