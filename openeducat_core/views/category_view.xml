@@ -35,7 +35,7 @@
                 <search string="Category">
                     <field name="name"/>
                     <field name="code"/>
-                    <newline/>
+<!--                    <separator/>-->
                     <group expand="0" string="Group By...">
 <!--                        <filter context="{'group_by':'name'}"-->
 <!--                            domain="[]" string="Name"/>-->
