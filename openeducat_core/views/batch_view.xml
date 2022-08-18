@@ -72,7 +72,7 @@
                     <field name="start_date" />
                     <field name="end_date" />
                     <field name="course_id" />
-                    <newline />
+                    <separator />
                     <group expand="0" string="Group By...">
                         <filter string="Start Date" domain="[]"
                             context="{'group_by':'start_date'}" />
