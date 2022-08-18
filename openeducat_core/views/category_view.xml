@@ -37,10 +37,10 @@
                     <field name="code"/>
                     <newline/>
                     <group expand="0" string="Group By...">
-                        <filter context="{'group_by':'name'}"
-                            domain="[]" string="Name"/>
-                        <filter context="{'group_by':'code'}"
-                            domain="[]" string="Code"/>
+<!--                        <filter context="{'group_by':'name'}"-->
+<!--                            domain="[]" string="Name"/>-->
+<!--                        <filter context="{'group_by':'code'}"-->
+<!--                            domain="[]" string="Code"/>-->
                     </group>
                 </search>
             </field>
