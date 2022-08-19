@@ -86,20 +86,20 @@
                     <field name="end_datetime" select="True" />
                     <field name="type" select="True" />
                     <newline />
-                    <filter string="Today"
+                    <filter  string="Today" name="today"
                         domain="[('start_datetime', '&gt;=', time.strftime('%%Y-%%m-%%d 00:00:00')),('start_datetime', '&lt;=', time.strftime('%%Y-%%m-%%d 23:59:59'))]" />
                     <group expand="0" string="Group By...">
-                        <filter string="Faculty" domain="[]"
+                        <filter  string="Faculty" name="faculty" domain="[]"
                             context="{'group_by':'faculty_id'}" />
-                        <filter string="Course" domain="[]"
+                        <filter  string="Course" name="course" domain="[]"
                             context="{'group_by':'course_id'}" />
-                        <filter string="Batch" domain="[]"
+                        <filter  string="Batch" name="batch" domain="[]"
                             context="{'group_by':'batch_id'}" />
-                        <filter string="Period" domain="[]"
+                        <filter  string="Period" name="period" domain="[]"
                             context="{'group_by':'timing_id'}" />
-                        <filter string="Subject" domain="[]"
+                        <filter  string="Subject" name="subject" domain="[]"
                             context="{'group_by':'subject_id'}" />
-                        <filter string="State" domain="[]"
+                        <filter  string="State" name="state" domain="[]"
                             context="{'group_by':'state'}" />
                     </group>
                 </search>

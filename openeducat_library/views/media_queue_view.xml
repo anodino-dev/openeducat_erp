@@ -67,9 +67,9 @@
                     <field name="state" />
                     <newline />
                     <group expand="0" string="Group By...">
-                        <filter string="Media" domain="[]" context="{'group_by':'media_id'}"/>
-                        <filter string="Partner" domain="[]" context="{'group_by':'user_id'}" />
-                        <filter string="Status" domain="[]" context="{'group_by':'state'}" />
+                        <filter  string="Media" name="media" domain="[]" context="{'group_by':'media_id'}"/>
+                        <filter  string="Partner" name="partner" domain="[]" context="{'group_by':'user_id'}" />
+                        <filter  string="Status" name="status" domain="[]" context="{'group_by':'state'}" />
                     </group>
                 </search>
             </field>

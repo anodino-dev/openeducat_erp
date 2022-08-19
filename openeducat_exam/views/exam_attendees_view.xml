@@ -52,9 +52,9 @@
                     <field name="exam_id" />
                     <newline />
                     <group expand="0" string="Group By...">
-                        <filter string="Student" domain="[]" context="{'group_by':'student_id'}" />
-                        <filter string="Status" domain="[]" context="{'group_by':'status'}" />
-                        <filter string="Exam" domain="[]" context="{'group_by':'exam_id'}" />
+                        <filter  string="Student" name="student" domain="[]" context="{'group_by':'student_id'}" />
+                        <filter  string="Status" name="status" domain="[]" context="{'group_by':'status'}" />
+                        <filter  string="Exam" name="exam" domain="[]" context="{'group_by':'exam_id'}" />
                     </group>
                 </search>
             </field>

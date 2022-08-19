@@ -50,9 +50,9 @@
                     <field name="percentage" />
                     <newline />
                     <group expand="0" string="Group By...">
-                        <filter string="Marksheet Register" domain="[]"
+                        <filter  string="Marksheet Register" name="marksheet register" domain="[]"
                             context="{'group_by':'marksheet_reg_id'}" />
-                        <filter string="Student" domain="[]" context="{'group_by':'student_id'}" />
+                        <filter  string="Student" name="student" domain="[]" context="{'group_by':'student_id'}" />
                     </group>
                 </search>
             </field>

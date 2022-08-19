@@ -71,9 +71,9 @@
                     <field name="product_id" />
                     <newline />
                     <group expand="0" string="Group By...">
-                        <filter string="Course" domain="[]" context="{'group_by':'course_id'}" />
-                        <filter string="product" domain="[]" context="{'group_by':'product_id'}" />
-                        <filter string="Status" domain="[]" context="{'group_by':'state'}" />
+                        <filter name="course" string="course"  domain="[]" context="{'group_by':'course_id'}" />
+                        <filter name="product" string="product"  domain="[]" context="{'group_by':'product_id'}" />
+                        <filter name="status" string="status"  domain="[]" context="{'group_by':'state'}" />
                     </group>
                 </search>
             </field>

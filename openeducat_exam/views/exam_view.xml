@@ -82,11 +82,11 @@
                     <field name="min_marks" />
                     <newline />
                     <group expand="0" string="Group By...">
-                        <filter string="Subject" domain="[]" context="{'group_by':'subject_id'}" />
-                        <filter string="Exam Code" domain="[]"
+                        <filter  string="Subject" name="subject" domain="[]" context="{'group_by':'subject_id'}" />
+                        <filter  string="Exam Code" name="exam code" domain="[]"
                             context="{'group_by':'exam_code'}" />
-                        <filter string="State" domain="[]" context="{'group_by':'state'}" />
-                        <filter string="Exam" domain="[]" context="{'group_by':'name'}" />
+                        <filter  string="State" name="state" domain="[]" context="{'group_by':'state'}" />
+                        <filter  string="Exam" name="exam" domain="[]" context="{'group_by':'name'}" />
                     </group>
                 </search>
             </field>

@@ -110,18 +110,18 @@
                     <field name="allocation_ids" />
                     <newline />
                     <group expand="0" string="Group By...">
-                        <filter string="Name" domain="[]" context="{'group_by':'name'}" />
-                        <filter string="Course" domain="[]" context="{'group_by':'course_id'}" />
-                        <filter string="Batch" domain="[]"
+                        <filter  string="Name" name="name" domain="[]" context="{'group_by':'name'}" />
+                        <filter  string="Course" name="course" domain="[]" context="{'group_by':'course_id'}" />
+                        <filter  string="Batch" name="batch" domain="[]"
                             context="{'group_by':'batch_id'}" />
-                        <filter string="Subject" domain="[]" context="{'group_by':'subject_id'}" />
-                        <filter string="Faculty" domain="[]" context="{'group_by':'faculty_id'}" />
-                        <filter string="Marks" domain="[]" context="{'group_by':'marks'}" />
-                        <filter string="Assignment Type" domain="[]" context="{'group_by':'assignment_type_id'}" />
-                        <filter string="State" domain="[]" context="{'group_by':'state'}" />
-                        <filter string="Issued Date" domain="[]"
+                        <filter  string="Subject" name="subject" domain="[]" context="{'group_by':'subject_id'}" />
+                        <filter  string="Faculty" name="faculty" domain="[]" context="{'group_by':'faculty_id'}" />
+                        <filter  string="Marks" name="marks" domain="[]" context="{'group_by':'marks'}" />
+                        <filter  string="Assignment Type" name="assignment type" domain="[]" context="{'group_by':'assignment_type_id'}" />
+                        <filter  string="State" name="state" domain="[]" context="{'group_by':'state'}" />
+                        <filter  string="Issued Date" name="issued date" domain="[]"
                             context="{'group_by':'issued_date'}" />
-                        <filter string="Submission Date" domain="[]"
+                        <filter  string="Submission Date" name="submission date" domain="[]"
                             context="{'group_by':'submission_date'}" />
                     </group>
                 </search>

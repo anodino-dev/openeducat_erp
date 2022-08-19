@@ -63,8 +63,8 @@
                     <field name="media_id" />
                     <newline />
                     <group expand="0" string="Group By...">
-                        <filter string="Media" domain="[]" context="{'group_by':'media_id'}" />
-                        <filter string="State" domain="[]" context="{'group_by':'state'}" />
+                        <filter  string="Media" name="media" domain="[]" context="{'group_by':'media_id'}" />
+                        <filter  string="State" name="state" domain="[]" context="{'group_by':'state'}" />
                     </group>
                 </search>
             </field>

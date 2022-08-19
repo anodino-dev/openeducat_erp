@@ -59,9 +59,9 @@
                     <field name="facilities" />
                     <newline />
                     <group expand="0" string="Group By...">
-                        <filter string="Name" domain="[]" context="{'group_by':'name'}" />
-                        <filter string="Code" domain="[]" context="{'group_by':'code'}" />
-                        <filter string="Capacity" domain="[]" context="{'group_by':'capacity'}" />
+                        <filter  string="Name" name="name" domain="[]" context="{'group_by':'name'}" />
+                        <filter  string="Code" name="code" domain="[]" context="{'group_by':'code'}" />
+                        <filter  string="Capacity" name="capacity" domain="[]" context="{'group_by':'capacity'}" />
                     </group>
                 </search>
             </field>

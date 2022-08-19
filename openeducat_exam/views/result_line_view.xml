@@ -47,13 +47,13 @@
                     <field name="marks" />
                     <newline />
                     <group expand="0" string="Group By...">
-                        <filter string="Marksheet Line" domain="[]"
+                        <filter  string="Marksheet Line" name="marksheet line" domain="[]"
                             context="{'group_by':'marksheet_line_id'}" />
-                        <filter string="Exam" domain="[]" context="{'group_by':'exam_id'}" />
-                        <filter string="Marks" domain="[]" context="{'group_by':'marks'}" />
-                        <filter string="Students" domain="[]"
+                        <filter  string="Exam" name="exam" domain="[]" context="{'group_by':'exam_id'}" />
+                        <filter  string="Marks" name="marks" domain="[]" context="{'group_by':'marks'}" />
+                        <filter  string="Students" name="students" domain="[]"
                             context="{'group_by':'student_id'}" />
-                        <filter string="Status" domain="[]" context="{'group_by':'status'}" />
+                        <filter  string="Status" name="status" domain="[]" context="{'group_by':'status'}" />
                     </group>
                 </search>
             </field>

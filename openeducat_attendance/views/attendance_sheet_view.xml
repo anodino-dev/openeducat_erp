@@ -62,9 +62,9 @@
                     <field name="total_absent" />
                     <newline />
                     <group expand="0" string="Group By...">
-                        <filter string="Register" domain="[]"
+                        <filter  string="Register" name="register" domain="[]"
                             context="{'group_by':'register_id'}" />
-                        <filter string="Date" domain="[]" context="{'group_by':'attendance_date'}" />
+                        <filter  string="Date" name="date" domain="[]" context="{'group_by':'attendance_date'}" />
                     </group>
                 </search>
             </field>

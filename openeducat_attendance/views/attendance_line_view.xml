@@ -52,13 +52,13 @@
                     <field name="present" />
                     <newline />
                     <group expand="0" string="Group By...">
-                        <filter string="Attendance" domain="[]"
+                        <filter  string="Attendance" name="attendance" domain="[]"
                             context="{'group_by':'attendance_id'}" />
-                        <filter string="Course" domain="[]" context="{'group_by':'course_id'}" />
-                        <filter string="Batch" domain="[]"
+                        <filter  string="Course" name="course" domain="[]" context="{'group_by':'course_id'}" />
+                        <filter  string="Batch" name="batch" domain="[]"
                             context="{'group_by':'batch_id'}" />
-                        <filter string="Student" domain="[]" context="{'group_by':'student_id'}" />
-                        <filter string="Present ?" domain="[]" context="{'group_by':'present'}" />
+                        <filter  string="Student" name="student" domain="[]" context="{'group_by':'student_id'}" />
+                        <filter  string="Present ?" name="present ?" domain="[]" context="{'group_by':'present'}" />
                     </group>
                 </search>
             </field>

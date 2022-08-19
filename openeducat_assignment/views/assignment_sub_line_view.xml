@@ -70,16 +70,16 @@
                     <field name="note" />
                     <newline />
                     <group expand="0" string="Group By...">
-                        <filter string="Assignment" domain="[]"
+                        <filter  string="Assignment" name="assignment" domain="[]"
                             context="{'group_by':'assignment_id'}" />
-                        <filter string="Student" domain="[]" context="{'group_by':'student_id'}" />
-                        <filter string="Description" domain="[]"
+                        <filter  string="Student" name="student" domain="[]" context="{'group_by':'student_id'}" />
+                        <filter  string="Description" name="description" domain="[]"
                             context="{'group_by':'description'}" />
-                        <filter string="State" domain="[]" context="{'group_by':'state'}" />
-                        <filter string="Submission Date" domain="[]"
+                        <filter  string="State" name="state" domain="[]" context="{'group_by':'state'}" />
+                        <filter  string="Submission Date" name="submission date" domain="[]"
                             context="{'group_by':'submission_date'}" />
-                        <filter string="Note" domain="[]" context="{'group_by':'note'}" />
-                        <filter string="Marks" domain="[]" context="{'group_by':'marks'}" />
+                        <filter  string="Note" name="note" domain="[]" context="{'group_by':'note'}" />
+                        <filter  string="Marks" name="marks" domain="[]" context="{'group_by':'marks'}" />
                     </group>
                 </search>
             </field>
