@@ -74,11 +74,12 @@
                     <field name="course_id" />
                     <separator />
                     <group expand="0" string="Group By...">
-                        <filter string="Start Date" domain="[]"
+                        <filter string="Start Date" domain="[]" name="start_date"
                             context="{'group_by':'start_date'}" />
-                        <filter string="End Date" domain="[]"
+                        <filter string="End Date" domain="[]" name="end_date"
                             context="{'group_by':'end_date'}" />
-                        <filter string="Course" domain="[]" context="{'group_by':'course_id'}" />
+                        <filter string="Course" domain="[]" name="course"
+                                context="{'group_by':'course_id'}" />
                     </group>
                 </search>
             </field>

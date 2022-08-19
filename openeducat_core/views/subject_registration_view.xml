@@ -83,11 +83,11 @@
                     <field name="batch_id" />
                     <newline />
                     <group expand="0" string="Group By...">
-                        <filter string="Course" domain="[]"
+                        <filter name="Course" string="Course"  domain="[]"
                             context="{'group_by':'course_id'}" />
-                        <filter string="Batch" domain="[]"
+                        <filter name="Batch" string="Batch"  domain="[]"
                             context="{'group_by':'batch_id'}" />
-                        <filter string="Status" domain="[]"
+                        <filter name="Status" string="Status"  domain="[]"
                             context="{'group_by':'state'}" />
                     </group>
                 </search>
