@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-###############################################################################
+##############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
-#    Copyright (C) 2009-TODAY Tech-Receptives(<http://www.techreceptives.com>).
+#    Copyright (C) 2009-TODAY Tech Receptives(<http://www.techreceptives.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Lesser General Public License as
@@ -17,24 +17,31 @@
 #    You should have received a copy of the GNU Lesser General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-###############################################################################
+##############################################################################
+
 {
-    'name': 'OpenEduCat Support',
-    'category': 'Planner',
-    'summary': 'Help to configure OpenEduCat',
+    'name': 'OpenEduCat ERP',
     'version': '12.0.0.0',
     'license': 'LGPL-3',
+    'category': 'Education',
     "sequence": 3,
+    'summary': 'Manage Students, Faculties and Education Institute',
+    'complexity': "easy",
     'author': 'Tech Receptives',
     'website': 'http://www.openeducat.org',
-    'depends': ['web'],
+    'depends': ['openeducat_activity', 'openeducat_admission',
+                'openeducat_assignment', 'openeducat_attendance',
+                'openeducat_exam', 'openeducat_library',
+                'openeducat_parent',
+                'openeducat_timetable', 'web_openeducat'],
     'data': [
-        'views/web_planner_templates.xml',
     ],
-    'qweb': ['static/src/xml/web_planner.xml', 'static/src/xml/web.xml'],
+    'demo': [
+    ],
     'images': [
-        'static/description/openeducat_support_banner.jpg',
+        'static/description/openeducat_erp_banner.jpg',
     ],
     'installable': True,
     'auto_install': False,
+    'application': True,
 }
