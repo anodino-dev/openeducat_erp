@@ -447,7 +447,7 @@ msgid "Last Modified on"
 msgstr "Última Modificação em"
 
 #. module: openeducat_admission
-#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_last_name
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_lastname
 #: model:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
 #: model:ir.ui.view,arch_db:openeducat_admission.view_op_admission_search
 msgid "Last Name"

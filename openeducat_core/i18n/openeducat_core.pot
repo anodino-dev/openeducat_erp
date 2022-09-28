@@ -921,8 +921,8 @@ msgid "Last Modified on"
 msgstr ""
 
 #. module: openeducat_core
-#: model:ir.model.fields,field_description:openeducat_core.field_op_faculty_last_name
-#: model:ir.model.fields,field_description:openeducat_core.field_op_student_last_name
+#: model:ir.model.fields,field_description:openeducat_core.field_op_faculty_lastname
+#: model:ir.model.fields,field_description:openeducat_core.field_op_student_lastname
 #: model:ir.ui.view,arch_db:openeducat_core.view_op_faculty_form
 #: model:ir.ui.view,arch_db:openeducat_core.view_op_student_form
 msgid "Last Name"

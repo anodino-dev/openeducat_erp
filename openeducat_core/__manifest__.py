@@ -21,7 +21,7 @@
 
 {
     'name': 'OpenEduCat Core',
-    'version': '12.0.0.0',
+    'version': '12.0.0.1',
     'license': 'LGPL-3',
     'category': 'Education',
     "sequence": 1,
@@ -29,7 +29,7 @@
     'complexity': "easy",
     'author': 'Tech Receptives',
     'website': 'http://www.openeducat.org',
-    'depends': ['board', 'document', 'hr', 'web', 'website','product','base_location'],
+    'depends': ['board', 'document', 'hr', 'web', 'website', 'product', 'base_location','partner_firstname'],
     'data': [
         'report/report_menu.xml',
         'report/report_student_bonafide.xml',
@@ -54,8 +54,8 @@
         'dashboard/student_dashboard_view.xml',
         'dashboard/faculty_dashboard_view.xml',
         'menu/openeducat_core_menu.xml',
-#         'menu/faculty_menu.xml',
-#         'menu/student_menu.xml',
+        #         'menu/faculty_menu.xml',
+        #         'menu/student_menu.xml',
     ],
     'demo': [
         'demo/homepage_template.xml',

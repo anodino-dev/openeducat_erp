@@ -27,7 +27,7 @@
     name: 'Sumita'
     title: base.res_partner_title_miss
     middle_name: 'S'
-    last_name: 'Dani'
+    lastname: 'Dani'
     gender: 'f'
     birth_date: '1992-05-06'
     blood_group: 'A-'
@@ -55,7 +55,7 @@
     name: 'Sangita'
     title: base.res_partner_title_miss
     middle_name: 'S'
-    last_name: 'Dani'
+    lastname: 'Dani'
     gender: 'f'
     birth_date: '1992-05-06'
     blood_group: 'A-'

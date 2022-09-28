@@ -66,7 +66,7 @@ class ReportTicket(models.AbstractModel):
                 'student': student.name,
                 'image': student.image,
                 'student_middle': student.middle_name,
-                'student_last': student.last_name,
+                'student_last': student.lastname,
                 'roll_number': student_course.roll_number,
                 'line': self.get_subject(exam_session),
             }

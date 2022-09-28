@@ -20,11 +20,11 @@
                                 <div class="oe_kanban_details">
                                     <h4>
                                         <a type="open">
-                                            <field name="first_name"/>
+                                            <field name="firstname"/>
                                             <!-- <t t-if="record.middle_name.raw_value">
                                                 <field name="middle_name" /> </t> -->
-                                            <t t-if="record.last_name.raw_value">
-                                                <field name="last_name"/>
+                                            <t t-if="record.lastname.raw_value">
+                                                <field name="lastname"/>
                                             </t>
                                         </a>
                                     </h4>
@@ -62,9 +62,9 @@
             <field name="arch" type="xml">
                 <tree string="Faculty">
                     <!-- <field name="title" /> -->
-                    <field name="first_name"/>
+                    <field name="firstname"/>
                     <!-- <field name="middle_name" /> -->
-                    <field name="last_name"/>
+                    <field name="lastname"/>
                     <field name="work_location"/>
                     <!-- <field name="blood_group" /> -->
                     <!-- <field name="emergency_contact" /> -->
@@ -91,8 +91,7 @@
                         </div>
                         <field name="image" widget="image" class="oe_left oe_avatar"/>
                         <field name="name" invisible="1"/>
-                        <field name="partner_id" readonly="1"
-                               context="{'show_address_only': True}"/>
+                        <field name="partner_id" attrs="{'invisible':[['partner_id','=',False]],'required':[['partner_id','!=',False]],'readonly':[['partner_id','!=',False]]}"/>
                         <div class="oe_title">
                             <!-- <h1> <field name="title" placeholder="Title" style="width: 
                                 30%" /> </h1> -->
@@ -100,13 +99,13 @@
                                 <table>
                                     <tr>
                                         <td style="padding-right:10px">
-                                            <field name="first_name" required="1"
+                                            <field name="firstname" required="1"
                                                    placeholder="First Name"/>
                                         </td>
                                         <!-- <td style="padding-right:10px"><field name="middle_name" 
                                             placeholder="Middle Name" /></td> -->
                                         <td style="padding-right:10px">
-                                            <field name="last_name" placeholder="Last Name"/>
+                                            <field name="lastname" placeholder="Last Name"/>
                                         </td>
 
                                     </tr>
@@ -124,10 +123,10 @@
                             True}' /> </div> </group> -->
                         <group>
                             <group>
-                                <field name="work_email" required="1"/>
-                                <field name="mobile_phone" required="1"/>
-                                <field name="work_phone"/>
-                                <field name="identification_id" required="1"/>
+                                <field name="email" required="1"/>
+                                <field name="mobile" required="1"/>
+                                <field name="phone"/>
+                                <field name="vat" required="1"/>
                                 <label for="street" string="Address"/>
                                 <div name="div_address">
                                     <field name="street" placeholder="Street..."/>

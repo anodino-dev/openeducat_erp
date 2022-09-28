@@ -57,7 +57,7 @@
                                                 placeholder="Middle Name" />
                                         </td>
                                         <td style="padding-right:10px;">
-                                            <field name="last_name"
+                                            <field name="lastname"
                                                 placeholder="Last Name" />
                                         </td>
                                     </tr>

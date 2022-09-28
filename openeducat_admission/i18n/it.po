@@ -324,7 +324,7 @@ msgstr "Data Ultimo Messaggio"
 #. module: openeducat_admission
 #: view:op.admission:openeducat_admission.view_op_admission_form
 #: view:op.admission:openeducat_admission.view_op_admission_search
-#: field:op.admission,last_name:0
+#: field:op.admission,lastname:0
 msgid "Last Name"
 msgstr "Cognome"
 

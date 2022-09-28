@@ -50,7 +50,7 @@ class ReportAdmissionAnalysis(models.AbstractModel):
             res = {
                 'name': student.name,
                 'middle_name': student.middle_name,
-                'last_name': student.last_name,
+                'lastsname': student.lastsname,
                 'application_no': student.application_number,
             }
             lst.append(res)

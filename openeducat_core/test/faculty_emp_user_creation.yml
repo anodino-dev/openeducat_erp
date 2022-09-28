@@ -15,7 +15,7 @@
     name: 'Aadolf'
     title: base.res_partner_title_mister
     middle_name: 'D'
-    last_name: 'Church'
+    lastname: 'Church'
     gender: 'male'
     birth_date: '1983-02-01'
     blood_group: 'A+'
@@ -57,7 +57,7 @@
     name: 'Dylan'
     title: base.res_partner_title_mister
     middle_name: 'Q'
-    last_name: 'Hidalgo'
+    lastname: 'Hidalgo'
     gender: 'male'
     birth_date: '1983-02-01'
     blood_group: 'O+'

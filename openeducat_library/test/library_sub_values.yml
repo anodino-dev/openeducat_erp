@@ -15,7 +15,7 @@
     name: 'Dylan'
     title: base.res_partner_title_mister
     middle_name: 'Q'
-    last_name: 'Hidalgo'
+    lastname: 'Hidalgo'
     gender: 'male'
     birth_date: '1983-02-01'
     blood_group: 'O+'
@@ -40,7 +40,7 @@
     name: 'Sumita'
     title: base.res_partner_title_miss
     middle_name: 'S'
-    last_name: 'Dani'
+    lastname: 'Dani'
     gender: 'f'
     birth_date: '1992-05-06'
     blood_group: 'A-'

@@ -29,19 +29,19 @@ class OpStudentCourse(models.Model):
 
     name = fields.Char(compute='_compute_name')
     student_id = fields.Many2one('op.student', 'Student', ondelete="cascade")
-    course_id = fields.Many2one('op.course', 'Course', required=True,ondelete='restrict')
-    batch_id = fields.Many2one('op.batch', 'Batch', required=True,ondelete='restrict')
+    course_id = fields.Many2one('op.course', 'Course', required=True, ondelete='restrict')
+    batch_id = fields.Many2one('op.batch', 'Batch', required=True, ondelete='restrict')
     roll_number = fields.Char('Roll Number')
     subject_ids = fields.Many2many('op.subject', string='Subjects')
-    
+
     def _compute_name(self):
         for rec in self:
-            rec.name=rec.name_get()[0][1]
-        
-    def  name_get(self):
+            rec.name = rec.name_get()[0][1]
+
+    def name_get(self):
         context = self.env.context
         if 'from_course' in context:
-            return [(rec.id,u"{} en {}".format(rec.student_id.name,rec.batch_id.name)) for rec in self]
+            return [(rec.id, u"{} en {}".format(rec.student_id.name, rec.batch_id.name)) for rec in self]
         return [(rec.id, rec.student_id.name) for rec in self]
 
     _sql_constraints = [
@@ -61,9 +61,9 @@ class OpStudent(models.Model):
     _name = 'op.student'
     _inherits = {'res.partner': 'partner_id'}
 
-#     first_name = fields.Char('First Name', size=128)
-#    middle_name = fields.Char('Middle Name', size=128)
-#     last_name = fields.Char('Last Name', size=128)
+    #     first_name = fields.Char('First Name', size=128)
+    #    middle_name = fields.Char('Middle Name', size=128)
+    #     last_name = fields.Char('Last Name', size=128)
     birth_date = fields.Date('Birth Date')
     blood_group = fields.Selection(
         [('A+', 'A+ve'), ('B+', 'B+ve'), ('O+', 'O+ve'), ('AB+', 'AB+ve'),
@@ -83,13 +83,13 @@ class OpStudent(models.Model):
     gr_no = fields.Char("GR Number", size=20)
     category_id = fields.Many2one('op.category', 'Category')
     course_detail_ids = fields.One2many('op.student.course', 'student_id',
-                                        'Course Details' ,track_visibility='onchange')
+                                        'Course Details', track_visibility='onchange')
 
-    @api.onchange('first_name','last_name')
+    @api.onchange('firstname', 'lastname')
     def _onchange_name(self):
-        if self.first_name and self.last_name:
-            self.name=u"{} {}".format(self.first_name,self.last_name)
-            
+        if self.firstname and self.lastname:
+            self.name = u"{} {}".format(self.firstname, self.lastname)
+
     @api.multi
     @api.constrains('birth_date')
     def _check_birthdate(self):
@@ -107,6 +107,6 @@ class OpStudent(models.Model):
             self.country_id = self.zip_id.country_id
 
     @api.model
-    def create(self,data):
-        data['student']=True
+    def create(self, data):
+        data['student'] = True
         return super(OpStudent, self).create(data)

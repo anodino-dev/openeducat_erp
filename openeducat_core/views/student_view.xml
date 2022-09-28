@@ -23,7 +23,7 @@
                                         <a type="open">
                                             <field name="name" />
                                             <!-- <t t-if="record.middle_name.raw_value"> 
-                                                <field name="middle_name" /> </t> <t t-if="record.last_name.raw_value"> <field name="last_name" 
+                                                <field name="middle_name" /> </t> <t t-if="record.lastname.raw_value"> <field name="lastname"
                                                 /> </t> -->
                                         </a>
                                     </h4>
@@ -65,9 +65,9 @@
             <field name="arch" type="xml">
                 <tree string="Student">
                     <field name="title" />
-                    <field name="first_name" />
+                    <field name="firstname" />
                     <!-- <field name="middle_name" /> -->
-                    <field name="last_name" />
+                    <field name="lastname" />
                     <!-- <field name="blood_group" /> -->
                     <field name="emergency_contact" />
                     <field name="nationality" />
@@ -107,13 +107,13 @@
                                 <table>
                                     <tr>
                                         <td style="padding-right:10px;">
-                                            <field name="first_name" required="1"
+                                            <field name="firstname" required="1"
                                                 placeholder="First Name" />
                                         </td>
                                         <!-- <td style="padding-right:10px;"> <field name="middle_name" 
                                             placeholder="Middle Name" /> </td> -->
                                         <td style="padding-right:10px;">
-                                            <field name="last_name" placeholder="Last Name"
+                                            <field name="lastname" placeholder="Last Name"
                                                 required="1" />
                                         </td>
                                     </tr>

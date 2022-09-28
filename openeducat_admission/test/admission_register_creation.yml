@@ -71,7 +71,7 @@
   !record {model: op.admission, id: admission1_test}:
     name: 'Sumita'
     middle_name: 'S'
-    last_name: 'Dani'
+    lastname: 'Dani'
     gender: 'f'
     email: 'sumitsdani@openeducat.org'
     fees: 100000.0
@@ -162,7 +162,7 @@
   !record {model: op.admission, id: admission2_test}:
     name: 'Sneha'
     middle_name: 'S'
-    last_name: 'Patel'
+    lastsname: 'Patel'
     gender: 'f'
     email: 'snehaspatel@openeducat.org'
     fees: 100000.0

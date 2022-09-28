@@ -6,7 +6,7 @@
             <field name="title" ref="base.res_partner_title_miss" />
             <field name="name">Sumita</field>
             <field name="middle_name">S</field>
-            <field name="last_name">Dani</field>
+            <field name="lastname">Dani</field>
             <field name="gender">f</field>
             <field name="email">sumitasdani@demo.com</field>
             <field name="fees">100000.0</field>
@@ -29,7 +29,7 @@
             <field name="title" ref="base.res_partner_title_mister" />
             <field name="name">Xun</field>
             <field name="middle_name">K</field>
-            <field name="last_name">Chua</field>
+            <field name="lastname">Chua</field>
             <field name="gender">m</field>
             <field name="email">xunkchua@demo.com</field>
             <field name="fees">100000.0</field>
@@ -52,7 +52,7 @@
             <field name="title" ref="base.res_partner_title_miss" />
             <field name="name">Liling</field>
             <field name="middle_name">I</field>
-            <field name="last_name">Boon</field>
+            <field name="lastname">Boon</field>
             <field name="gender">f</field>
             <field name="email">lillingiboon@demo.com</field>
             <field name="fees">100000.0</field>
@@ -75,7 +75,7 @@
             <field name="title" ref="base.res_partner_title_miss" />
             <field name="name">Prachi</field>
             <field name="middle_name">U</field>
-            <field name="last_name">Dani</field>
+            <field name="lastname">Dani</field>
             <field name="gender">f</field>
             <field name="email">prachisdani@demo.com</field>
             <field name="fees">100000.0</field>
@@ -98,7 +98,7 @@
             <field name="title" ref="base.res_partner_title_mister" />
             <field name="name">Valdez</field>
             <field name="middle_name">L</field>
-            <field name="last_name">Cisse</field>
+            <field name="lastname">Cisse</field>
             <field name="gender">m</field>
             <field name="email">valdezlcisse@demo.com</field>
             <field name="fees">100000.0</field>
@@ -121,7 +121,7 @@
             <field name="title" ref="base.res_partner_title_mister" />
             <field name="name">Matthew</field>
             <field name="middle_name">K</field>
-            <field name="last_name">Aybar</field>
+            <field name="lastname">Aybar</field>
             <field name="gender">m</field>
             <field name="email">matthewkaybar@demo.com</field>
             <field name="fees">100000.0</field>
@@ -144,7 +144,7 @@
             <field name="title" ref="base.res_partner_title_mister" />
             <field name="name">Dawud</field>
             <field name="middle_name">L</field>
-            <field name="last_name">Bitar</field>
+            <field name="lastname">Bitar</field>
             <field name="gender">m</field>
             <field name="email">dawudlbitar@demo.com</field>
             <field name="fees">100000.0</field>
@@ -167,7 +167,7 @@
             <field name="title" ref="base.res_partner_title_miss" />
             <field name="name">Laura</field>
             <field name="middle_name">Z</field>
-            <field name="last_name">Damian</field>
+            <field name="lastname">Damian</field>
             <field name="gender">f</field>
             <field name="email">laurazdamian@demo.com</field>
             <field name="fees">100000.0</field>
@@ -190,7 +190,7 @@
             <field name="title" ref="base.res_partner_title_miss" />
             <field name="name">Rishita</field>
             <field name="middle_name">T</field>
-            <field name="last_name">Parikh</field>
+            <field name="lastname">Parikh</field>
             <field name="gender">f</field>
             <field name="email">rishitatparikh@demo.com</field>
             <field name="fees">80000.0</field>
@@ -213,7 +213,7 @@
             <field name="title" ref="base.res_partner_title_mister" />
             <field name="name">Abhinav</field>
             <field name="middle_name">Y</field>
-            <field name="last_name">Chaudhri</field>
+            <field name="lastname">Chaudhri</field>
             <field name="gender">m</field>
             <field name="email">abhinavychaudhri@demo.com</field>
             <field name="fees">80000.0</field>
@@ -236,7 +236,7 @@
             <field name="title" ref="base.res_partner_title_mister" />
             <field name="name">Deepak</field>
             <field name="middle_name">K</field>
-            <field name="last_name">Jha</field>
+            <field name="lastname">Jha</field>
             <field name="gender">m</field>
             <field name="email">deepakkjha@demo.com</field>
             <field name="fees">80000.0</field>
@@ -259,7 +259,7 @@
             <field name="title" ref="base.res_partner_title_mister" />
             <field name="name">Hung</field>
             <field name="middle_name">K</field>
-            <field name="last_name">Lan</field>
+            <field name="lastname">Lan</field>
             <field name="gender">m</field>
             <field name="email">hungklan@demo.com</field>
             <field name="fees">80000.0</field>
@@ -282,7 +282,7 @@
             <field name="title" ref="base.res_partner_title_miss" />
             <field name="name">Qiang</field>
             <field name="middle_name">W</field>
-            <field name="last_name">Sim</field>
+            <field name="lastname">Sim</field>
             <field name="gender">f</field>
             <field name="email">qiangwsim@demo.com</field>
             <field name="fees">30000.0</field>
@@ -305,7 +305,7 @@
             <field name="title" ref="base.res_partner_title_mister" />
             <field name="name">Hardik</field>
             <field name="middle_name">S</field>
-            <field name="last_name">Sharma</field>
+            <field name="lastname">Sharma</field>
             <field name="gender">m</field>
             <field name="email">hardikspatel@demo.com</field>
             <field name="fees">30000.0</field>
@@ -328,7 +328,7 @@
             <field name="title" ref="base.res_partner_title_miss" />
             <field name="name">Shweta</field>
             <field name="middle_name">O</field>
-            <field name="last_name">Hasnandani</field>
+            <field name="lastname">Hasnandani</field>
             <field name="gender">f</field>
             <field name="email">shwetaohasnandani@demo.com</field>
             <field name="fees">30000.0</field>
@@ -351,7 +351,7 @@
             <field name="title" ref="base.res_partner_title_mister" />
             <field name="name">Daniel</field>
             <field name="middle_name">W</field>
-            <field name="last_name">Fostar</field>
+            <field name="lastname">Fostar</field>
             <field name="gender">m</field>
             <field name="email">danielwfostar@demo.com</field>
             <field name="fees">30000.0</field>
@@ -374,7 +374,7 @@
             <field name="title" ref="base.res_partner_title_miss" />
             <field name="name">Alexis</field>
             <field name="middle_name">K</field>
-            <field name="last_name">Smith</field>
+            <field name="lastname">Smith</field>
             <field name="gender">f</field>
             <field name="email">alexisksmith@demo.com</field>
             <field name="fees">20000.0</field>
@@ -397,7 +397,7 @@
             <field name="title" ref="base.res_partner_title_mister" />
             <field name="name">Mason</field>
             <field name="middle_name">D</field>
-            <field name="last_name">Bennett</field>
+            <field name="lastname">Bennett</field>
             <field name="gender">f</field>
             <field name="email">masondbannett@demo.com</field>
             <field name="fees">20000.0</field>
@@ -420,7 +420,7 @@
             <field name="title" ref="base.res_partner_title_miss" />
             <field name="name">Grace</field>
             <field name="middle_name">E</field>
-            <field name="last_name">Palmer</field>
+            <field name="lastname">Palmer</field>
             <field name="gender">f</field>
             <field name="email">graceepalmer@demo.com</field>
             <field name="fees">20000.0</field>
@@ -443,7 +443,7 @@
             <field name="title" ref="base.res_partner_title_mister" />
             <field name="name">Isaac</field>
             <field name="middle_name">F</field>
-            <field name="last_name">Clark</field>
+            <field name="lastname">Clark</field>
             <field name="gender">m</field>
             <field name="email">isaacfclark@demo.com</field>
             <field name="fees">20000.0</field>
@@ -466,7 +466,7 @@
             <field name="title" ref="base.res_partner_title_miss" />
             <field name="name">Hannah</field>
             <field name="middle_name">J</field>
-            <field name="last_name">Walker</field>
+            <field name="lastname">Walker</field>
             <field name="gender">f</field>
             <field name="email">hannahjwalker@demo.com</field>
             <field name="fees">20000.0</field>
@@ -487,7 +487,7 @@
             <field name="title" ref="base.res_partner_title_mister" />
             <field name="name">Gavin</field>
             <field name="middle_name">K</field>
-            <field name="last_name">Robinson</field>
+            <field name="lastname">Robinson</field>
             <field name="gender">m</field>
             <field name="email">gavinkrobinson@demo.com</field>
             <field name="fees">20000.0</field>
@@ -508,7 +508,7 @@
             <field name="title" ref="base.res_partner_title_mister" />
             <field name="name">Jayden</field>
             <field name="middle_name">N</field>
-            <field name="last_name">Moore</field>
+            <field name="lastsname">Moore</field>
             <field name="gender">m</field>
             <field name="email">jaydennmoore@demo.com</field>
             <field name="fees">20000.0</field>

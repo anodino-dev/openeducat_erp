@@ -33,7 +33,7 @@ class StudentAttendanceReport(models.AbstractModel):
         if student:
             return ' '.join([student.name,
                              student.middle_name,
-                             student.last_name])
+                             student.lastname])
 
     def get_data(self, data):
 

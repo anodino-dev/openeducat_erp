@@ -11,8 +11,8 @@ class ResPartner(models.Model):
     '''
 
     _inherit ='res.partner'
-    
-    first_name= fields.Char()
-    last_name= fields.Char()
+
+    # first_name= fields.Char()
+    # last_name= fields.Char()
     student = fields.Boolean()
     faculty = fields.Boolean()

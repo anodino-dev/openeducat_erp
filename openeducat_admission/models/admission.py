@@ -39,7 +39,7 @@ class OpAdmission(models.Model):
     middle_name = fields.Char(
         'Middle Name', size=128,
         states={'done': [('readonly', True)]})
-    last_name = fields.Char(
+    lastname = fields.Char(
         'Last Name', size=128, required=True,
         states={'done': [('readonly', True)]})
     title = fields.Many2one(
@@ -122,7 +122,7 @@ class OpAdmission(models.Model):
             self.title = student.title and student.title.id or False
             self.name = student.name
             self.middle_name = student.middle_name
-            self.last_name = student.last_name
+            self.lastsname = student.lastsname
             self.birth_date = student.birth_date
             self.gender = student.gender
             self.image = student.image or False
@@ -143,7 +143,7 @@ class OpAdmission(models.Model):
             self.title = ''
             self.name = ''
             self.middle_name = ''
-            self.last_name = ''
+            self.lastsname = ''
             self.birth_date = ''
             self.gender = ''
             self.image = False
@@ -205,7 +205,7 @@ class OpAdmission(models.Model):
                 raise ValidationError(_('Please assign batch.'))
             if not record.partner_id:
                 partner_id = self.env['res.partner'].create({
-                    'name': '{} {}'.format(record.name,record.last_name)
+                    'name': '{} {}'.format(record.name,record.lastsname)
                 })
                 record.partner_id = partner_id.id
             record.state = 'confirm'
@@ -217,7 +217,7 @@ class OpAdmission(models.Model):
                 'title': student.title and student.title.id or False,
                 'name': student.name,
                 'middle_name': student.middle_name,
-                'last_name': student.last_name,
+                'lastsname': student.lastsname,
                 'birth_date': student.birth_date,
                 'gender': student.gender,
                 'course_id':
