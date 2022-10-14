@@ -14,7 +14,7 @@
                                 <div class="o_kanban_image">
                                     <a type="open">
                                         <img
-                                            t-att-src="kanban_image('op.student', 'image', record.id.value)"
+                                            t-att-src="kanban_image('op.student', 'image', record.id.raw_value)"
                                             class="oe_employee_picture" />
                                     </a>
                                 </div>
