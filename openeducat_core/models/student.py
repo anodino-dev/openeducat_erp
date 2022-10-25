@@ -102,9 +102,9 @@ class OpStudent(models.Model):
     def onchange_zip_id(self):
         if self.zip_id:
             self.zip = self.zip_id.name
-            self.city = self.zip_id.city
-            self.state_id = self.zip_id.state_id
-            self.country_id = self.zip_id.country_id
+            self.city = self.zip_id.city_id.name
+            self.state_id = self.zip_id.city_id.state_id
+            self.country_id = self.zip_id.city_id.country_id
 
     @api.model
     def create(self, data):
