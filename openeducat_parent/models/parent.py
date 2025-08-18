@@ -41,7 +41,7 @@ class OpParent(models.Model):
             res.user_id.child_ids = [(6, 0, user_ids)]
         return res
 
-    @api.multi
+    #@api.multi
     def write(self, vals):
         for record in self:
             res = super(OpParent, self).write(vals)
@@ -53,14 +53,14 @@ class OpParent(models.Model):
             record.clear_caches()
             return res
 
-    @api.multi
+    #@api.multi
     def unlink(self):
         for record in self:
             if record.name.user_id:
                 record.user_id.child_ids = [(6, 0, [])]
             return super(OpParent, self).unlink()
 
-    @api.multi
+    #@api.multi
     def create_parent_user(self):
         for record in self:
             if not record.name.email:
@@ -96,7 +96,7 @@ class OpStudent(models.Model):
                     parent_id.user_id.child_ids = [(6, 0, user_ids)]
         return res
 
-    @api.multi
+    #@api.multi
     def write(self, vals):
         res = super(OpStudent, self).write(vals)
         if vals.get('parent_ids', False):
@@ -122,7 +122,7 @@ class OpStudent(models.Model):
         self.clear_caches()
         return res
 
-    @api.multi
+    #@api.multi
     def unlink(self):
         for record in self:
             if record.parent_ids:
@@ -143,7 +143,7 @@ class OpSubjectRegistration(models.Model):
             create Subject Registration!'))
         return super(OpSubjectRegistration, self).create(vals)
 
-    @api.multi
+    #@api.multi
     def write(self, vals):
         if self.env.user.child_ids:
             raise Warning(_('Invalid Action!\n Parent can not edit \

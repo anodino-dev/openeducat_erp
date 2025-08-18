@@ -20,8 +20,8 @@
             </field>
         </record>
 
-        <act_window id="action_student_user_create_view" multi="True"
-            name="Create Users" res_model="wizard.op.student" src_model="op.student"
-            view_mode="form" target="new" view_type="form" />
+<!--        <act_window id="action_student_user_create_view" multi="True"-->
+<!--            name="Create Users" res_model="wizard.op.student" src_model="op.student"-->
+<!--            view_mode="form" target="new" view_type="form" />-->
     </data>
 </odoo>

@@ -40,7 +40,7 @@ class OpStudentFeesDetails(models.Model):
         ('paid', 'Paid'), ('cancel', 'Cancelled')], 'State',
         related="invoice_id.state", readonly=True)
 
-    @api.multi
+    #@api.multi
     def get_invoice(self):
         """ Create invoice for fee payment process of student """
 

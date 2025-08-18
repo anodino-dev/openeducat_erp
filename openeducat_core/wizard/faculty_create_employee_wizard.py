@@ -28,7 +28,7 @@ class WizardOpFacultyEmployee(models.TransientModel):
 
     user_boolean = fields.Boolean("Want to create user too ?", default=True)
 
-    @api.multi
+    #@api.multi
     def create_employee(self):
         for record in self:
             active_id = self.env.context.get('active_ids', []) or []

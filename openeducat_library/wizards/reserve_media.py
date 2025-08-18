@@ -29,7 +29,7 @@ class ReserveMedia(models.TransientModel):
 
     partner_id = fields.Many2one('res.partner', required=True)
 
-    @api.multi
+    #@api.multi
     def set_partner(self):
         for media in self:
             self.env['op.media.movement'].browse(

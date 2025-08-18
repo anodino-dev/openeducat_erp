@@ -36,7 +36,7 @@ class ReturnMedia(models.TransientModel):
         'Actual Return Date', default=lambda self: fields.Date.today(),
         required=True)
 
-    @api.multi
+    #@api.multi
     def do_return(self):
         for media in self:
             if media.media_unit_id.state and \

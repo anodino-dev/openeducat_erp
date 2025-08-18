@@ -25,7 +25,7 @@ from odoo import models, api
 class OpStudent(models.Model):
     _inherit = 'op.student'
 
-    @api.multi
+    #@api.multi
     def action_view_invoice(self):
         '''
         This function returns an action that

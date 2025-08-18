@@ -51,27 +51,27 @@ class OpAssignmentSubLine(models.Model):
         'res.users', related='assignment_id.faculty_id.user_id',
         string='Faculty User')
 
-    @api.multi
+    #@api.multi
     def act_draft(self):
         result = self.state = 'draft'
         return result and result or False
 
-    @api.multi
+    #@api.multi
     def act_submit(self):
         result = self.state = 'submit'
         return result and result or False
 
-    @api.multi
+    #@api.multi
     def act_accept(self):
         result = self.state = 'accept'
         return result and result or False
 
-    @api.multi
+    #@api.multi
     def act_change_req(self):
         result = self.state = 'change'
         return result and result or False
 
-    @api.multi
+    #@api.multi
     def act_reject(self):
         result = self.state = 'reject'
         return result and result or False

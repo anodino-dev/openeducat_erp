@@ -84,11 +84,11 @@
                     <header />
                     <sheet>
                         <div class="oe_button_box" name="button_box">
-                            <button name="toggle_active" type="object" class="oe_stat_button"
-                                icon="fa-archive">
-                                <field name="active" widget="boolean_button"
-                                    options="{&quot;terminology&quot;: &quot;archive&quot;}" />
-                            </button>
+<!--                            <button name="toggle_active" type="object" class="oe_stat_button"-->
+<!--                                icon="fa-archive">-->
+<!--                                <field name="active" widget="boolean_button"-->
+<!--                                    options="{&quot;terminology&quot;: &quot;archive&quot;}" />-->
+<!--                            </button>-->
                         </div>
                         <div class="oe_title">
                             <field name="already_partner" />
@@ -98,7 +98,7 @@
                                 attrs="{'required':[('already_partner','=',True)],'invisible': [('already_partner','=', False)]}" />
                         </div>
                         <field name="name" invisible="1" />
-                        <field name="image" widget="image" class="oe_left oe_avatar" />
+<!--                        <field name="image" widget="image" class="oe_left oe_avatar" />-->
                         <div class="oe_title">
                             <h3>
                                 <field name="title" placeholder="Title" />
@@ -201,7 +201,7 @@
             <field name="name">Students</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">op.student</field>
-            <field name="view_type">form</field>
+<!--            <field name="view_type">form</field>-->
             <field name="view_mode">kanban,tree,form</field>
             <field name="search_view_id" ref="view_op_student_search" />
             <field name="domain">[]</field>

@@ -66,14 +66,14 @@ class OpSession(models.Model):
         'res.users', compute='_compute_batch_users',
         store=True, string='Users')
 
-    @api.multi
+    #@api.multi
     @api.depends('start_datetime')
     def _compute_day(self):
         for record in self:
             record.type = fields.Datetime.from_string(
                 record.start_datetime).strftime("%A")
 
-    @api.multi
+    #@api.multi
     @api.depends('faculty_id', 'subject_id', 'start_datetime')
     def _compute_name(self):
         for session in self:
@@ -83,7 +83,7 @@ class OpSession(models.Model):
                     session.subject_id.name + ':' + str(session.timing_id.name)
 
     # For record rule on student and faculty dashboard
-    @api.multi
+    #@api.multi
     @api.depends('batch_id', 'faculty_id', 'user_ids.child_ids')
     def _compute_batch_users(self):
         student_obj = self.env['op.student']
@@ -100,15 +100,15 @@ class OpSession(models.Model):
                 user_list.extend(user_ids.ids)
             session.user_ids = user_list
 
-    @api.multi
+    #@api.multi
     def lecture_draft(self):
         self.state = 'draft'
 
-    @api.multi
+    #@api.multi
     def lecture_confirm(self):
         self.state = 'confirm'
 
-    @api.multi
+    #@api.multi
     def lecture_done(self):
         self.state = 'done'
 

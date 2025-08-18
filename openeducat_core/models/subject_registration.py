@@ -50,15 +50,15 @@ class OpSubjectRegistration(models.Model):
     min_unit_load = fields.Float('Minimum Unit Load',
                                  track_visibility='onchange')
 
-    @api.multi
+    #@api.multi
     def action_reset_draft(self):
         self.state = 'draft'
 
-    @api.multi
+    #@api.multi
     def action_reject(self):
         self.state = 'rejected'
 
-    @api.multi
+    #@api.multi
     def action_approve(self):
         for record in self:
             subject_ids = []
@@ -79,7 +79,7 @@ class OpSubjectRegistration(models.Model):
                 raise ValidationError(
                     _("Course not found on student's admission!"))
 
-    @api.multi
+    #@api.multi
     def action_submitted(self):
         self.state = 'submitted'
 
@@ -90,7 +90,7 @@ class OpSubjectRegistration(models.Model):
                 'op.subject.registration') or '/'
         return super(OpSubjectRegistration, self).create(vals)
 
-    @api.multi
+    #@api.multi
     def get_subjects(self):
         for record in self:
             subject_ids = []

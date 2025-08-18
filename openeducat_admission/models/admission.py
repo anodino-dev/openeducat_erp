@@ -170,7 +170,7 @@ class OpAdmission(models.Model):
             term_id = self.course_id.fees_term_id.id
         self.fees_term_id = term_id
 
-    @api.multi
+    #@api.multi
     @api.constrains('register_id', 'application_date')
     def _check_admission_register(self):
         for record in self:
@@ -182,7 +182,7 @@ class OpAdmission(models.Model):
                     "Application Date should be between Start Date & \
                     End Date of Admission Register."))
 
-    @api.multi
+    #@api.multi
     @api.constrains('birth_date')
     def _check_birthdate(self):
         for record in self:
@@ -190,15 +190,15 @@ class OpAdmission(models.Model):
                 raise ValidationError(_(
                     "Birth Date can't be greater than current date!"))
 
-    @api.multi
+    #@api.multi
     def submit_form(self):
         self.state = 'submit'
 
-    @api.multi
+    #@api.multi
     def admission_confirm(self):
         self.state = 'admission'
 
-    @api.multi
+    #@api.multi
     def confirm_in_progress(self):
         for record in self:
             if not record.batch_id:
@@ -210,7 +210,7 @@ class OpAdmission(models.Model):
                 record.partner_id = partner_id.id
             record.state = 'confirm'
 
-    @api.multi
+    #@api.multi
     def get_student_vals(self):
         for student in self:
             return {

@@ -45,7 +45,7 @@ class OpHeldExam(models.TransientModel):
         })
         return res
 
-    @api.multi
+    #@api.multi
     def held_exam(self):
         for record in self:
             if record.attendees_line:

@@ -90,7 +90,7 @@ class OpStudent(models.Model):
         if self.firstname and self.lastname:
             self.name = u"{} {}".format(self.firstname, self.lastname)
 
-    @api.multi
+    #@api.multi
     @api.constrains('birth_date')
     def _check_birthdate(self):
         for record in self:

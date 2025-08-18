@@ -61,7 +61,7 @@ class OpAdmissionRegister(models.Model):
          ('admission', 'Admission Process'), ('done', 'Done')],
         'Status', default='draft', track_visibility='onchange')
 
-    @api.multi
+    #@api.multi
     @api.constrains('start_date', 'end_date')
     def check_dates(self):
         for record in self:
@@ -71,7 +71,7 @@ class OpAdmissionRegister(models.Model):
                 raise ValidationError(_("End Date cannot be set before \
                 Start Date."))
 
-    @api.multi
+    #@api.multi
     @api.constrains('min_count', 'max_count')
     def check_no_of_admission(self):
         for record in self:
@@ -81,26 +81,26 @@ class OpAdmissionRegister(models.Model):
                 raise ValidationError(_(
                     "Min Admission can't be greater than Max Admission"))
 
-    @api.multi
+    #@api.multi
     def confirm_register(self):
         self.state = 'confirm'
 
-    @api.multi
+    #@api.multi
     def set_to_draft(self):
         self.state = 'draft'
 
-    @api.multi
+    #@api.multi
     def cancel_register(self):
         self.state = 'cancel'
 
-    @api.multi
+    #@api.multi
     def start_application(self):
         self.state = 'application'
 
-    @api.multi
+    #@api.multi
     def start_admission(self):
         self.state = 'admission'
 
-    @api.multi
+    #@api.multi
     def close_register(self):
         self.state = 'done'
