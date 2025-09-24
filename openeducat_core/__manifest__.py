@@ -29,7 +29,7 @@
     'complexity': "easy",
     'author': 'Tech Receptives',
     'website': 'http://www.openeducat.org',
-    'depends': ['board', 'hr', 'web', 'product', 'base_location','partner_firstname','account'],
+    'depends': ['board', 'hr', 'web', 'product', 'base_location','partner_firstname','account','website'],
     'data': [
         'report/report_menu.xml',
         'report/report_student_bonafide.xml',
